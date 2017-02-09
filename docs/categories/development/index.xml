@@ -10,7 +10,7 @@
     <atom:link href="https://dsc-spidal.github.io/tutorials/categories/development/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Installing OpenMPI</title>
+      <title>Installing Prerequisites</title>
       <link>https://dsc-spidal.github.io/tutorials/post/install_ompi.md/</link>
       <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
       
@@ -84,6 +84,54 @@
 &lt;li&gt;Few examples are available in &lt;code&gt;$OMPI_1101/examples&lt;/code&gt;. Please use &lt;code&gt;mpijavac&lt;/code&gt; with other parameters similar to &lt;code&gt;javac&lt;/code&gt; command to compile OpenMPI Java programs. Once compiled &lt;code&gt;mpirun [options] java -cp &amp;lt;classpath&amp;gt; class-name arguments&lt;/code&gt; command with proper values set as arguments will run the MPI Java program.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Installing SPIDAL Software</title>
+      <link>https://dsc-spidal.github.io/tutorials/post/install_spidal/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://dsc-spidal.github.io/tutorials/post/install_spidal/</guid>
+      <description>
+
+&lt;h1 id=&#34;da-mds:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;DA-MDS&lt;/h1&gt;
+
+&lt;p&gt;The project can be built from the source.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/damds.git&lt;/span&gt;
+ &lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;damds&lt;/span&gt;
+ &lt;span style=&#34;color: #f8f8f2&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After building it will create a Jar file inside the &lt;code&gt;target&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;Usually people run MDS using a cluster manager such as slurm. We have provided a sample script in &lt;code&gt;bin&lt;/code&gt; directory that can be used to run the program on a single machine.&lt;/p&gt;
+
+&lt;h1 id=&#34;run-example:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;Run example&lt;/h1&gt;
+
+&lt;p&gt;DA-MDS is configured using a configuration file. A sample configuration file with two input files for distance and weight matrices can be found in &lt;code&gt;examples/input&lt;/code&gt; folder.&lt;/p&gt;
+
+&lt;p&gt;Lets run this sample using the &lt;code&gt;damds.sh&lt;/code&gt; file found in &lt;code&gt;bin&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;bin&lt;/span&gt;
+ &lt;span style=&#34;color: #f92672&#34;&gt;./&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;damds&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;../&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;examples&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;properties&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The first argument to the script is the location of configuration file. Second argument is the number of nodes.
+In our case it is 1 as we run on local machine. The third argument is the number of processes. In this case we are using 4 processes.&lt;/p&gt;
+
+&lt;p&gt;After the program finished executing, the output will be in a file called &lt;code&gt;damds-points.txt&lt;/code&gt; inside the &lt;code&gt;bin&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;You can upload this file to&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//spidal-gw.dsc.soic.indiana.edu/dashboard&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;to visualize the projected files.&lt;/p&gt;
 </description>
     </item>
     

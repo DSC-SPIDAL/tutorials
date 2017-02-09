@@ -1,6 +1,6 @@
 ---
-title: "Installing OpenMPI"
-description: "Install OpenMPI 1.10.1 on a Linux machine"
+title: "Installing Prerequisites"
+description: "Install OpenMPI 1.10.1 and Java on a Linux machine"
 tags: [ "OpenMPI", "Install"]
 lastmod: 2015-12-23
 date: "2012-04-06"
@@ -8,7 +8,7 @@ categories:
   - "Development"
   - "VIM"
 slug: "install_ompi.md"
----
+---  
 
 # Prerequisites
 
@@ -37,7 +37,7 @@ slug: "install_ompi.md"
     export MVN_HOME PATH
 {{< /highlight >}}
 
-5. OpenMPI
+4. OpenMPI
   * We recommend using `OpenMPI 1.10.1` although it work with the previous 1.8 versions. Note, if using a version other than 1.10.1 please remember to set Maven dependency appropriately in the `pom.xml`.
   * Download OpenMPI 1.10.1 from http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz
   * Extract the archive to a folder named `openmpi-1.10.1`
