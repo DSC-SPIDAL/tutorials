@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim on SPIDAL Tutorials</title>
+    <link>http://replace-this-with-your-hugo-site.com/tags/vim/</link>
+    <description>Recent content in Vim on SPIDAL Tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Apr 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Installing OpenMPI</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/spf13-vim-3-0-release-and-new-website/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/spf13-vim-3-0-release-and-new-website/</guid>
+      <description>&lt;p&gt;Hello&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;class A
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
