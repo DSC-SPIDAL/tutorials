@@ -19,7 +19,6 @@
   
   <link rel="stylesheet" href="https://dsc-spidal.github.io/tutorials//css/sanitize.css">
   <link rel="stylesheet" href="https://dsc-spidal.github.io/tutorials//css/responsive.css">
-  <link rel="stylesheet" href="https://dsc-spidal.github.io/tutorials//css/highlight_monokai.css">
   <link rel="stylesheet" href="https://dsc-spidal.github.io/tutorials//css/theme.css">
   <link rel="stylesheet" href="https://dsc-spidal.github.io/tutorials//css/custom.css">
   
@@ -93,13 +92,13 @@
 
 <ul>
 <li>Download Oracle JDK 8 from <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></li>
-<li>Extract the archive to a folder named <code>jdk1.8.0</code></li>
+<li>Extract the archive to a folder named jdk1.8.0</li>
 <li>Set the following environment variables.
-~~~java
-JAVA_HOME=<path-to-jdk1.8.0-directory>
+<code>bash
+JAVA_HOME=&lt;path-to-jdk1.8.0-directory&gt;
 PATH=$JAVA_HOME/bin:$PATH
 export JAVA_HOME PATH
-~~~</li>
+</code></li>
 </ul></li>
 
 <li><p>Apache Maven</p>
@@ -107,7 +106,7 @@ export JAVA_HOME PATH
 <ul>
 <li>Download latest Maven release from <a href="http://maven.apache.org/download.cgi">http://maven.apache.org/download.cgi</a></li>
 <li>Extract it to some folder and set the following environment variables.
-<code>
+<code>java
 MVN_HOME=&lt;path-to-Maven-folder&gt;
 $PATH=$MVN_HOME/bin:$PATH
 export MVN_HOME PATH
@@ -117,38 +116,30 @@ export MVN_HOME PATH
 <li><p>OpenMPI</p>
 
 <ul>
-<li><p>We recommend using <code>OpenMPI 1.10.1</code> although it work with the previous 1.8 versions. Note, if using a version other than 1.10.1 please remember to set Maven dependency appropriately in the <code>pom.xml</code>.</p></li>
-
-<li><p>Download OpenMPI 1.10.1 from <a href="http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz">http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz</a></p></li>
-
-<li><p>Extract the archive to a folder named <code>openmpi-1.10.1</code></p></li>
-
-<li><p>Also create a directory named <code>build</code> in some location. We will use this to install OpenMPI</p></li>
-
-<li><p>Set the following environment variables</p>
-
-<pre><code>BUILD=&lt;path-to-build-directory&gt;
+<li>We recommend using <code>OpenMPI 1.10.1</code> although it work with the previous 1.8 versions. Note, if using a version other than 1.10.1 please remember to set Maven dependency appropriately in the <code>pom.xml</code>.</li>
+<li>Download OpenMPI 1.10.1 from <a href="http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz">http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz</a></li>
+<li>Extract the archive to a folder named <code>openmpi-1.10.1</code></li>
+<li>Also create a directory named <code>build</code> in some location. We will use this to install OpenMPI</li>
+<li>Set the following environment variables
+<code>bash
+BUILD=&lt;path-to-build-directory&gt;
 OMPI_1101=&lt;path-to-openmpi-1.10.1-directory&gt;
 PATH=$BUILD/bin:$PATH
 LD_LIBRARY_PATH=$BUILD/lib:$LD_LIBRARY_PATH
 export BUILD OMPI_1101 PATH LD_LIBRARY_PATH
-</code></pre></li>
-
-<li><p>The instructions to build OpenMPI depend on the platform. Therefore, we highly recommend looking into the <code>$OMPI_1101/INSTALL</code> file. Platform specific build files are available in <code>$OMPI_1101/contrib/platform</code> directory.</p></li>
-
-<li><p>In general, please specify <code>--prefix=$BUILD</code> and <code>--enable-mpi-java</code> as arguments to <code>configure</code> script. If Infiniband is available (highly recommended) specify <code>--with-verbs=&lt;path-to-verbs-installation&gt;</code>. Usually, the path to verbs installation is <code>/usr</code>. In summary, the following commands will build OpenMPI for a Linux system.</p>
-
-<pre><code>cd $OMPI_1101
+</code></li>
+<li>The instructions to build OpenMPI depend on the platform. Therefore, we highly recommend looking into the <code>$OMPI_1101/INSTALL</code> file. Platform specific build files are available in <code>$OMPI_1101/contrib/platform</code> directory.</li>
+<li>In general, please specify <code>--prefix=$BUILD</code> and <code>--enable-mpi-java</code> as arguments to <code>configure</code> script. If Infiniband is available (highly recommended) specify <code>--with-verbs=&lt;path-to-verbs-installation&gt;</code>. Usually, the path to verbs installation is <code>/usr</code>. In summary, the following commands will build OpenMPI for a Linux system.
+<code>
+cd $OMPI_1101
 ./configure --prefix=$BUILD --enable-mpi-java
 make;make install
-</code></pre></li>
-
-<li><p>If everything goes well <code>mpirun --version</code> will show <code>mpirun (Open MPI) 1.10.1</code>. Execute the following command to instal <code>$OMPI_1101/ompi/mpi/java/java/mpi.jar</code> as a Maven artifact.</p>
-
-<pre><code>mvn install:install-file -DcreateChecksum=true -Dpackaging=jar -Dfile=$OMPI_1101/ompi/mpi/java/java/mpi.jar -DgroupId=ompi -DartifactId=ompijavabinding -Dversion=1.10.1
-</code></pre></li>
-
-<li><p>Few examples are available in <code>$OMPI_1101/examples</code>. Please use <code>mpijavac</code> with other parameters similar to <code>javac</code> command to compile OpenMPI Java programs. Once compiled <code>mpirun [options] java -cp &lt;classpath&gt; class-name arguments</code> command with proper values set as arguments will run the MPI Java program.</p></li>
+</code></li>
+<li>If everything goes well <code>mpirun --version</code> will show <code>mpirun (Open MPI) 1.10.1</code>. Execute the following command to instal <code>$OMPI_1101/ompi/mpi/java/java/mpi.jar</code> as a Maven artifact.
+<code>
+mvn install:install-file -DcreateChecksum=true -Dpackaging=jar -Dfile=$OMPI_1101/ompi/mpi/java/java/mpi.jar -DgroupId=ompi -DartifactId=ompijavabinding -Dversion=1.10.1
+</code></li>
+<li>Few examples are available in <code>$OMPI_1101/examples</code>. Please use <code>mpijavac</code> with other parameters similar to <code>javac</code> command to compile OpenMPI Java programs. Once compiled <code>mpirun [options] java -cp &lt;classpath&gt; class-name arguments</code> command with proper values set as arguments will run the MPI Java program.</li>
 </ul></li>
 </ol>
 
@@ -178,7 +169,6 @@ make;make install
 
 </div>
 
-<script>hljs.initHighlightingOnLoad();</script>
 
 
 

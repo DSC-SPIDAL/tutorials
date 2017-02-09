@@ -34,13 +34,13 @@
 
 &lt;ul&gt;
 &lt;li&gt;Download Oracle JDK 8 from &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/index.html&#34;&gt;http://www.oracle.com/technetwork/java/javase/downloads/index.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Extract the archive to a folder named &lt;code&gt;jdk1.8.0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Extract the archive to a folder named jdk1.8.0&lt;/li&gt;
 &lt;li&gt;Set the following environment variables.
-~~~java
-JAVA_HOME=&lt;path-to-jdk1.8.0-directory&gt;
+&lt;code&gt;bash
+JAVA_HOME=&amp;lt;path-to-jdk1.8.0-directory&amp;gt;
 PATH=$JAVA_HOME/bin:$PATH
 export JAVA_HOME PATH
-~~~&lt;/li&gt;
+&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Apache Maven&lt;/p&gt;
@@ -48,7 +48,7 @@ export JAVA_HOME PATH
 &lt;ul&gt;
 &lt;li&gt;Download latest Maven release from &lt;a href=&#34;http://maven.apache.org/download.cgi&#34;&gt;http://maven.apache.org/download.cgi&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Extract it to some folder and set the following environment variables.
-&lt;code&gt;
+&lt;code&gt;java
 MVN_HOME=&amp;lt;path-to-Maven-folder&amp;gt;
 $PATH=$MVN_HOME/bin:$PATH
 export MVN_HOME PATH
@@ -58,38 +58,30 @@ export MVN_HOME PATH
 &lt;li&gt;&lt;p&gt;OpenMPI&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;We recommend using &lt;code&gt;OpenMPI 1.10.1&lt;/code&gt; although it work with the previous 1.8 versions. Note, if using a version other than 1.10.1 please remember to set Maven dependency appropriately in the &lt;code&gt;pom.xml&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Download OpenMPI 1.10.1 from &lt;a href=&#34;http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&#34;&gt;http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Extract the archive to a folder named &lt;code&gt;openmpi-1.10.1&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Also create a directory named &lt;code&gt;build&lt;/code&gt; in some location. We will use this to install OpenMPI&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Set the following environment variables&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;BUILD=&amp;lt;path-to-build-directory&amp;gt;
+&lt;li&gt;We recommend using &lt;code&gt;OpenMPI 1.10.1&lt;/code&gt; although it work with the previous 1.8 versions. Note, if using a version other than 1.10.1 please remember to set Maven dependency appropriately in the &lt;code&gt;pom.xml&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Download OpenMPI 1.10.1 from &lt;a href=&#34;http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&#34;&gt;http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract the archive to a folder named &lt;code&gt;openmpi-1.10.1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Also create a directory named &lt;code&gt;build&lt;/code&gt; in some location. We will use this to install OpenMPI&lt;/li&gt;
+&lt;li&gt;Set the following environment variables
+&lt;code&gt;bash
+BUILD=&amp;lt;path-to-build-directory&amp;gt;
 OMPI_1101=&amp;lt;path-to-openmpi-1.10.1-directory&amp;gt;
 PATH=$BUILD/bin:$PATH
 LD_LIBRARY_PATH=$BUILD/lib:$LD_LIBRARY_PATH
 export BUILD OMPI_1101 PATH LD_LIBRARY_PATH
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;The instructions to build OpenMPI depend on the platform. Therefore, we highly recommend looking into the &lt;code&gt;$OMPI_1101/INSTALL&lt;/code&gt; file. Platform specific build files are available in &lt;code&gt;$OMPI_1101/contrib/platform&lt;/code&gt; directory.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;In general, please specify &lt;code&gt;--prefix=$BUILD&lt;/code&gt; and &lt;code&gt;--enable-mpi-java&lt;/code&gt; as arguments to &lt;code&gt;configure&lt;/code&gt; script. If Infiniband is available (highly recommended) specify &lt;code&gt;--with-verbs=&amp;lt;path-to-verbs-installation&amp;gt;&lt;/code&gt;. Usually, the path to verbs installation is &lt;code&gt;/usr&lt;/code&gt;. In summary, the following commands will build OpenMPI for a Linux system.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd $OMPI_1101
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The instructions to build OpenMPI depend on the platform. Therefore, we highly recommend looking into the &lt;code&gt;$OMPI_1101/INSTALL&lt;/code&gt; file. Platform specific build files are available in &lt;code&gt;$OMPI_1101/contrib/platform&lt;/code&gt; directory.&lt;/li&gt;
+&lt;li&gt;In general, please specify &lt;code&gt;--prefix=$BUILD&lt;/code&gt; and &lt;code&gt;--enable-mpi-java&lt;/code&gt; as arguments to &lt;code&gt;configure&lt;/code&gt; script. If Infiniband is available (highly recommended) specify &lt;code&gt;--with-verbs=&amp;lt;path-to-verbs-installation&amp;gt;&lt;/code&gt;. Usually, the path to verbs installation is &lt;code&gt;/usr&lt;/code&gt;. In summary, the following commands will build OpenMPI for a Linux system.
+&lt;code&gt;
+cd $OMPI_1101
 ./configure --prefix=$BUILD --enable-mpi-java
 make;make install
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;If everything goes well &lt;code&gt;mpirun --version&lt;/code&gt; will show &lt;code&gt;mpirun (Open MPI) 1.10.1&lt;/code&gt;. Execute the following command to instal &lt;code&gt;$OMPI_1101/ompi/mpi/java/java/mpi.jar&lt;/code&gt; as a Maven artifact.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mvn install:install-file -DcreateChecksum=true -Dpackaging=jar -Dfile=$OMPI_1101/ompi/mpi/java/java/mpi.jar -DgroupId=ompi -DartifactId=ompijavabinding -Dversion=1.10.1
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Few examples are available in &lt;code&gt;$OMPI_1101/examples&lt;/code&gt;. Please use &lt;code&gt;mpijavac&lt;/code&gt; with other parameters similar to &lt;code&gt;javac&lt;/code&gt; command to compile OpenMPI Java programs. Once compiled &lt;code&gt;mpirun [options] java -cp &amp;lt;classpath&amp;gt; class-name arguments&lt;/code&gt; command with proper values set as arguments will run the MPI Java program.&lt;/p&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;If everything goes well &lt;code&gt;mpirun --version&lt;/code&gt; will show &lt;code&gt;mpirun (Open MPI) 1.10.1&lt;/code&gt;. Execute the following command to instal &lt;code&gt;$OMPI_1101/ompi/mpi/java/java/mpi.jar&lt;/code&gt; as a Maven artifact.
+&lt;code&gt;
+mvn install:install-file -DcreateChecksum=true -Dpackaging=jar -Dfile=$OMPI_1101/ompi/mpi/java/java/mpi.jar -DgroupId=ompi -DartifactId=ompijavabinding -Dversion=1.10.1
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Few examples are available in &lt;code&gt;$OMPI_1101/examples&lt;/code&gt;. Please use &lt;code&gt;mpijavac&lt;/code&gt; with other parameters similar to &lt;code&gt;javac&lt;/code&gt; command to compile OpenMPI Java programs. Once compiled &lt;code&gt;mpirun [options] java -cp &amp;lt;classpath&amp;gt; class-name arguments&lt;/code&gt; command with proper values set as arguments will run the MPI Java program.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
