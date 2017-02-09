@@ -97,7 +97,7 @@
 
 &lt;h1 id=&#34;da-mds:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;DA-MDS&lt;/h1&gt;
 
-&lt;p&gt;The project can be built from the source.&lt;/p&gt;
+&lt;p&gt;DA-MDS is the deterministic annealing implementation of Multidimensional Scaling algorithm. The project can be built from the source.&lt;/p&gt;
 
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/damds.git&lt;/span&gt;
  &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;damds&lt;/span&gt;

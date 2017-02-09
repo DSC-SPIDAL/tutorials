@@ -13,7 +13,7 @@ slug: "install_spidal"
 DA-MDS
 ======
  
-The project can be built from the source.
+DA-MDS is the deterministic annealing implementation of Multidimensional Scaling algorithm. The project can be built from the source.
  
 {{< highlight javascript >}}
  git clone https://github.com/DSC-SPIDAL/damds.git
