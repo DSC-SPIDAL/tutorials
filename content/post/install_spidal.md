@@ -42,7 +42,7 @@ In our case it is 1 as we run on local machine. The third argument is the number
 
 After the program finished executing, the output will be in a file called `damds-points.txt` inside the `bin` directory.
 
-You can upload this file to `WebPlotViz` using the following link to visualize the data. 
+You can upload this file to `WebPlotViz` using the following link to visualize the data. Note: you may need to register in WebPlotViz before you can upload the files. 
 
 {{< highlight javascript >}}
 https://spidal-gw.dsc.soic.indiana.edu/dashboard
