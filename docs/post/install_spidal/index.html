@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Installing SPIDAL Software | SPIDAL Tutorials
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://dsc-spidal.github.io/tutorials/post/install_spidal/"/>
+
+  
+  <link rel="stylesheet" href="https://dsc-spidal.github.io/tutorials//css/sanitize.css">
+  <link rel="stylesheet" href="https://dsc-spidal.github.io/tutorials//css/responsive.css">
+  <link rel="stylesheet" href="https://dsc-spidal.github.io/tutorials//css/theme.css">
+  <link rel="stylesheet" href="https://dsc-spidal.github.io/tutorials//css/custom.css">
+  
+  
+  <link href="https://dsc-spidal.github.io/tutorials/index.xml" rel="alternate" type="application/rss+xml" title="SPIDAL Tutorials" />
+  <link href="https://dsc-spidal.github.io/tutorials/index.xml" rel="feed" type="application/rss+xml" title="SPIDAL Tutorials" />
+
+  
+  
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/agate.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="https://dsc-spidal.github.io/tutorials/">SPIDAL Tutorials</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>Installing SPIDAL Software</h1>
+      <div class="meta">
+        Apr 6, 2012 &nbsp;
+        
+          #<a href="/tags/"></a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<h1 id="da-mds:d5ba1b43025eafd1c38ad1a13d6b817c">DA-MDS</h1>
+
+<p>The project can be built from the source.</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span> <span style="color: #a6e22e">git</span> <span style="color: #a6e22e">clone</span> <span style="color: #a6e22e">https</span><span style="color: #f92672">:</span><span style="color: #75715e">//github.com/DSC-SPIDAL/damds.git</span>
+ <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">damds</span>
+ <span style="color: #a6e22e">mvn</span> <span style="color: #a6e22e">install</span>
+</pre></div>
+
+
+<p>After building it will create a Jar file inside the <code>target</code> directory.</p>
+
+<p>Usually people run MDS using a cluster manager such as slurm. We have provided a sample script in <code>bin</code> directory that can be used to run the program on a single machine.</p>
+
+<h2 id="run-example:d5ba1b43025eafd1c38ad1a13d6b817c">Run example</h2>
+
+<p>DA-MDS is configured using a configuration file. A sample configuration file with two input files for distance and weight matrices can be found in <code>examples/input</code> folder.</p>
+
+<p>Lets run this sample using the <code>damds.sh</code> file found in <code>bin</code> directory.</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span> <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">bin</span>
+ <span style="color: #f8f8f2">.</span><span style="color: #f92672">/</span><span style="color: #a6e22e">damds</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span> <span style="color: #f8f8f2">..</span><span style="color: #f92672">/</span><span style="color: #a6e22e">examples</span><span style="color: #f92672">/</span><span style="color: #a6e22e">input</span><span style="color: #f92672">/</span><span style="color: #a6e22e">config</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">properties</span> <span style="color: #ae81ff">1</span> <span style="color: #ae81ff">4</span> 
+</pre></div>
+
+
+<p>The first argument to the script is the location of configuration file. Second argument is the number of nodes.
+In our case it is 1 as we run on local machine. The third argument is the number of processes. In this case we are using 4 processes.</p>
+
+<p>After the program finished executing, the output will be in a file called <code>damds-points.txt</code> inside the <code>bin</code> directory.</p>
+
+<p>You can upload this file to <code>WebPlotViz</code> using the following link to visualize the data.</p>
+
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #a6e22e">https</span><span style="color: #f92672">:</span><span style="color: #75715e">//spidal-gw.dsc.soic.indiana.edu/dashboard</span>
+</pre></div>
+</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+    
+      <span class="next"><a href="https://dsc-spidal.github.io/tutorials/post/install_ompi.md/" rel="next">Installing Prerequisites</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+
+
+
+</body>
+</html>
+

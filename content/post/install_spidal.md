@@ -15,7 +15,7 @@ DA-MDS
  
 The project can be built from the source.
  
-{{< highlight java >}}
+{{< highlight javascript >}}
  git clone https://github.com/DSC-SPIDAL/damds.git
  cd damds
  mvn install
@@ -26,13 +26,13 @@ After building it will create a Jar file inside the `target` directory.
 Usually people run MDS using a cluster manager such as slurm. We have provided a sample script in `bin` directory that can be used to run the program on a single machine.
 
 Run example
-===========
+-----------
 
 DA-MDS is configured using a configuration file. A sample configuration file with two input files for distance and weight matrices can be found in `examples/input` folder.
 
 Lets run this sample using the `damds.sh` file found in `bin` directory.
  
-{{< highlight java >}}
+{{< highlight javascript >}}
  cd bin
  ./damds.sh ../examples/input/config.properties 1 4 
 {{< /highlight >}}
@@ -42,12 +42,12 @@ In our case it is 1 as we run on local machine. The third argument is the number
 
 After the program finished executing, the output will be in a file called `damds-points.txt` inside the `bin` directory.
 
-You can upload this file to 
+You can upload this file to `WebPlotViz` using the following link to visualize the data. 
 
-{{< highlight java >}}
+{{< highlight javascript >}}
 https://spidal-gw.dsc.soic.indiana.edu/dashboard
 {{< /highlight >}}
 
-to visualize the projected files.
+
 
 
