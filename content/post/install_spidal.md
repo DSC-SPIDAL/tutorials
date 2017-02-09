@@ -1,7 +1,7 @@
 ---
 title: "Installing SPIDAL Software"
 description: "Install MDS and DAVS"
-tags: [ ""]
+tags: []
 lastmod: 2015-12-23
 date: "2012-04-06"
 categories:
