@@ -7,7 +7,7 @@ date: "2012-04-06"
 categories:
   - "Development"
   - "VIM"
-slug: "install_ompi"
+slug: "install_ompi.md"
 ---
 
 Hello

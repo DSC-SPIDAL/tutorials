@@ -1,5 +1,6 @@
-baseurl = "https://dsc-spidal.github.io/tutorials/"
+baseurl = ""
 languageCode = "en-us"
 title = "SPIDAL Tutorials"
 theme = "angels-ladder"
 publishDir = "docs"
+relativeURLs = true

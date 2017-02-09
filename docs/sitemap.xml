@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://dsc-spidal.github.io/tutorials/</loc>
+    <loc>/</loc>
     <lastmod>2015-12-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dsc-spidal.github.io/tutorials/post/install_ompi/</loc>
+    <loc>/post/install_ompi.md/</loc>
     <lastmod>2015-12-23T00:00:00+00:00</lastmod>
   </url>
   
