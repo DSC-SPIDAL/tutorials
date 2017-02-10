@@ -62,7 +62,7 @@
 &lt;li&gt;Download OpenMPI 1.10.1 from &lt;a href=&#34;http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&#34;&gt;http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Extract the archive to a folder named &lt;code&gt;openmpi-1.10.1&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Also create a directory named &lt;code&gt;build&lt;/code&gt; in some location. We will use this to install OpenMPI
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;   &lt;span style=&#34;color: #f8f8f2&#34;&gt;wget&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;http&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;   &lt;span style=&#34;color: #f8f8f2&#34;&gt;wget&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;no&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;check&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;certificate&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;http&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&lt;/span&gt;
    &lt;span style=&#34;color: #f8f8f2&#34;&gt;tar&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;xvf&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;openmpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1.10.1&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;tar&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;gz&lt;/span&gt;
    &lt;span style=&#34;color: #f8f8f2&#34;&gt;mkdir&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;build&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -76,7 +76,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;The instructions to build OpenMPI depend on the platform. Therefore, we highly recommend looking into the &lt;code&gt;$OMPI_1101/INSTALL&lt;/code&gt; file. Platform specific build files are available in &lt;code&gt;$OMPI_1101/contrib/platform&lt;/code&gt; directory.&lt;/li&gt;
-&lt;li&gt;In general, please specify &lt;code&gt;--prefix=$BUILD&lt;/code&gt; and &lt;code&gt;--enable-mpi-java&lt;/code&gt; as arguments to &lt;code&gt;configure&lt;/code&gt; script. If Infiniband is available (highly recommended) specify &lt;code&gt;--with-verbs=&amp;lt;path-to-verbs-installation&amp;gt;&lt;/code&gt;. Usually, the path to verbs installation is &lt;code&gt;/usr&lt;/code&gt;. In summary, the following commands will build OpenMPI for a Linux system.
+&lt;li&gt;In general, please specify &lt;code&gt;--prefix=$BUILD&lt;/code&gt; and &lt;code&gt;--enable-mpi-java&lt;/code&gt; as arguments to &lt;code&gt;configure&lt;/code&gt; script. If Infiniband is available (highly recommended) specify &lt;code&gt;--with-verbs=&amp;lt;path-to-verbs-installation&amp;gt;&lt;/code&gt;. Usually, the path to verbs installation is &lt;code&gt;/usr&lt;/code&gt;. In summary, the following commands will build OpenMPI for a Linux system. Also if you have a multicore machine using &lt;code&gt;make -j 8&lt;/code&gt; will use 8 cores to build in parallel.
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;$OMPI_1101&lt;/span&gt;
     &lt;span style=&#34;color: #f92672&#34;&gt;./&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;configure&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;prefix&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BUILD&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;enable&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;java&lt;/span&gt;
     &lt;span style=&#34;color: #f8f8f2&#34;&gt;make&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;make&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;install&lt;/span&gt;
@@ -100,6 +100,16 @@
       <guid>https://dsc-spidal.github.io/tutorials/post/install_spidal/</guid>
       <description>
 
+&lt;h1 id=&#34;common:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;common&lt;/h1&gt;
+
+&lt;p&gt;SPIDAL libraries depend on the common project in DSC-SPIDAL github. We need to build it first.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/common.git&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;common&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h1 id=&#34;da-mds:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;DA-MDS&lt;/h1&gt;
 
 &lt;p&gt;DA-MDS is the deterministic annealing implementation of Multidimensional Scaling algorithm. The project can be built from the source.&lt;/p&gt;
@@ -120,10 +130,10 @@
 
 &lt;p&gt;Lets run this sample using the &lt;code&gt;damds.sh&lt;/code&gt; file found in &lt;code&gt;bin&lt;/code&gt; directory.&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;bin&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;bin&lt;/span&gt;
  &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;damds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;examples&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;properties&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
-
+&lt;/p&gt;
 
 &lt;p&gt;The first argument to the script is the location of configuration file. Second argument is the number of nodes.
 In our case it is 1 as we run on local machine. The third argument is the number of processes. In this case we are using 4 processes.&lt;/p&gt;

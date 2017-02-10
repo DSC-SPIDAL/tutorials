@@ -10,6 +10,17 @@ categories:
 slug: "install_spidal"
 ---
 
+common
+======
+
+SPIDAL libraries depend on the common project in DSC-SPIDAL github. We need to build it first.
+
+{{< highlight javascript >}}
+ git clone https://github.com/DSC-SPIDAL/common.git
+ cd common
+ mvn install
+{{< /highlight >}}
+
 DA-MDS
 ======
  

@@ -43,7 +43,7 @@ slug: "install_ompi.md"
   * Extract the archive to a folder named `openmpi-1.10.1`
   * Also create a directory named `build` in some location. We will use this to install OpenMPI
 {{< highlight java >}}
-   wget http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz
+   wget --no-check-certificate http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz
    tar -xvf openmpi-1.10.1.tar.gz
    mkdir build
 {{< /highlight >}}  
@@ -56,7 +56,7 @@ slug: "install_ompi.md"
     export BUILD OMPI_1101 PATH LD_LIBRARY_PATH
 {{< /highlight >}}
   * The instructions to build OpenMPI depend on the platform. Therefore, we highly recommend looking into the `$OMPI_1101/INSTALL` file. Platform specific build files are available in `$OMPI_1101/contrib/platform` directory.
-  * In general, please specify `--prefix=$BUILD` and `--enable-mpi-java` as arguments to `configure` script. If Infiniband is available (highly recommended) specify `--with-verbs=<path-to-verbs-installation>`. Usually, the path to verbs installation is `/usr`. In summary, the following commands will build OpenMPI for a Linux system.
+  * In general, please specify `--prefix=$BUILD` and `--enable-mpi-java` as arguments to `configure` script. If Infiniband is available (highly recommended) specify `--with-verbs=<path-to-verbs-installation>`. Usually, the path to verbs installation is `/usr`. In summary, the following commands will build OpenMPI for a Linux system. Also if you have a multicore machine using `make -j 8` will use 8 cores to build in parallel. 
 {{< highlight java >}}
     cd $OMPI_1101
     ./configure --prefix=$BUILD --enable-mpi-java
