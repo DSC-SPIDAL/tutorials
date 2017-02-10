@@ -10,6 +10,17 @@ categories:
 slug: "install_spidal"
 ---
 
+common
+======
+
+SPIDAL libraries depend on the common project in DSC-SPIDAL github. We need to build it first.
+
+{{< highlight javascript >}}
+ git clone https://github.com/DSC-SPIDAL/common.git
+ cd common
+ mvn install
+{{< /highlight >}}
+
 DA-MDS
 ======
  
@@ -25,8 +36,8 @@ After building it will create a Jar file inside the `target` directory.
 
 Usually people run MDS using a cluster manager such as slurm. We have provided a sample script in `bin` directory that can be used to run the program on a single machine.
 
-Run example
------------
+Run example - local machine
+---------------------------
 
 DA-MDS is configured using a configuration file. A sample configuration file with two input files for distance and weight matrices can be found in `examples/input` folder.
 
@@ -49,5 +60,14 @@ https://spidal-gw.dsc.soic.indiana.edu/dashboard
 {{< /highlight >}}
 
 
+Run example - slurm cluster
+---------------------------
 
+You can use the `damds_slurm.sh` found in `bin` directory to run the program in a `slurm` HPC cluster. In this example we assume that you have built `damds` in a shared file system where every node can access the data files with the same file path.
 
+{{< highlight javascript >}}
+ cd bin
+ ./damds_slurm.sh ../examples/input/config.properties 4 
+{{< /highlight >}}
+
+The above command will run the example using 4 nodes. 

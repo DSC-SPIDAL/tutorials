@@ -71,6 +71,16 @@
     <article>
       
 
+<h1 id="common:d5ba1b43025eafd1c38ad1a13d6b817c">common</h1>
+
+<p>SPIDAL libraries depend on the common project in DSC-SPIDAL github. We need to build it first.</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span> <span style="color: #a6e22e">git</span> <span style="color: #a6e22e">clone</span> <span style="color: #a6e22e">https</span><span style="color: #f92672">:</span><span style="color: #75715e">//github.com/DSC-SPIDAL/common.git</span>
+ <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">common</span>
+ <span style="color: #a6e22e">mvn</span> <span style="color: #a6e22e">install</span>
+</pre></div>
+
+
 <h1 id="da-mds:d5ba1b43025eafd1c38ad1a13d6b817c">DA-MDS</h1>
 
 <p>DA-MDS is the deterministic annealing implementation of Multidimensional Scaling algorithm. The project can be built from the source.</p>
@@ -85,7 +95,7 @@
 
 <p>Usually people run MDS using a cluster manager such as slurm. We have provided a sample script in <code>bin</code> directory that can be used to run the program on a single machine.</p>
 
-<h2 id="run-example:d5ba1b43025eafd1c38ad1a13d6b817c">Run example</h2>
+<h2 id="run-example-local-machine:d5ba1b43025eafd1c38ad1a13d6b817c">Run example - local machine</h2>
 
 <p>DA-MDS is configured using a configuration file. A sample configuration file with two input files for distance and weight matrices can be found in <code>examples/input</code> folder.</p>
 
@@ -106,6 +116,17 @@ In our case it is 1 as we run on local machine. The third argument is the number
 <p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #a6e22e">https</span><span style="color: #f92672">:</span><span style="color: #75715e">//spidal-gw.dsc.soic.indiana.edu/dashboard</span>
 </pre></div>
 </p>
+
+<h2 id="run-example-slurm-cluster:d5ba1b43025eafd1c38ad1a13d6b817c">Run example - slurm cluster</h2>
+
+<p>You can use the <code>damds_slurm.sh</code> found in <code>bin</code> directory to run the program in a <code>slurm</code> HPC cluster. In this example we assume that you have built <code>damds</code> in a shared file system where every node can access the data files with the same file path.</p>
+
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span> <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">bin</span>
+ <span style="color: #f8f8f2">.</span><span style="color: #f92672">/</span><span style="color: #a6e22e">damds_slurm</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span> <span style="color: #f8f8f2">..</span><span style="color: #f92672">/</span><span style="color: #a6e22e">examples</span><span style="color: #f92672">/</span><span style="color: #a6e22e">input</span><span style="color: #f92672">/</span><span style="color: #a6e22e">config</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">properties</span> <span style="color: #ae81ff">4</span> 
+</pre></div>
+</p>
+
+<p>The above command will run the example using 4 nodes.</p>
 
       
       
