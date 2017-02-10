@@ -60,7 +60,7 @@ slug: "install_ompi.md"
 {{< highlight java >}}
     cd $OMPI_1101
     ./configure --prefix=$BUILD --enable-mpi-java
-    make;make install
+    make -j 24;make install
 {{< /highlight >}}
   * If everything goes well `mpirun --version` will show `mpirun (Open MPI) 1.10.1`. Execute the following command to instal `$OMPI_1101/ompi/mpi/java/java/mpi.jar` as a Maven artifact.
 {{< highlight java >}}
