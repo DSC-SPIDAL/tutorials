@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Fungi Gene Sequence Clustering | SPIDAL Tutorials
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://dsc-spidal.github.io/tutorials/post/fungi_gene_sequence_example/"/>
+
+  
+  <link rel="stylesheet" href="https://dsc-spidal.github.io/tutorials//css/sanitize.css">
+  <link rel="stylesheet" href="https://dsc-spidal.github.io/tutorials//css/responsive.css">
+  <link rel="stylesheet" href="https://dsc-spidal.github.io/tutorials//css/theme.css">
+  <link rel="stylesheet" href="https://dsc-spidal.github.io/tutorials//css/custom.css">
+  
+  
+  <link href="https://dsc-spidal.github.io/tutorials/index.xml" rel="alternate" type="application/rss+xml" title="SPIDAL Tutorials" />
+  <link href="https://dsc-spidal.github.io/tutorials/index.xml" rel="feed" type="application/rss+xml" title="SPIDAL Tutorials" />
+
+  
+  
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/agate.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="https://dsc-spidal.github.io/tutorials/">SPIDAL Tutorials</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>Fungi Gene Sequence Clustering</h1>
+      <div class="meta">
+        Feb 10, 2017 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<h1 id="introduction:39a00125390bdf0bf712c5c9614cc8c5">Introduction</h1>
+
+<p>The usecase of this example is based on a set fungal gene sequence data. For the pupose of the example we will only use a very small subset of the complete data to
+ keep the runtime at a manageable level. The aim is to cluster the gene sequence data. For this DAMDS and DAPWC algorithms will be utilized. When working with the complete data set the
+ following steps are followed ( Some steps are done iteratively to refine results further ) to generate good clustering results. For this example will only be doing a single iteration.</p>
+
+<p>Note: For some intermediate steps data needs to be formatted before the next step can be completed. To keep the example simple the repository will provide formatted data for such cases</p>
+
+<h1 id="data:39a00125390bdf0bf712c5c9614cc8c5">Data</h1>
+
+<p>The raw data used for the complete use case is in FASTA format. Some analysis data on the complete data set is listed below.</p>
+
+<ul>
+<li>There was a total of 7065846 (~7million) sequences.</li>
+<li>Number of Unique sequences : 578486</li>
+<li>Number of Unique sequences that appear more than once  : 170264</li>
+<li>Number of sequence of Single Occurrence  : 408222</li>
+</ul>
+
+<p>For the complete use case all 170K unique sequences that appear more than once were used. For the example we will only be using 2400 gene sequences.</p>
+
+<h1 id="pre-processing:39a00125390bdf0bf712c5c9614cc8c5">Pre Processing</h1>
+
+<p>The file <code>2400_gene_seq_testset.fna</code> contains the 2400 gene sequences that are used in this example. This file can be found at the git repo <a href="https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/data">here</a> . In order to run DAMDS and DAPWC we need to
+generate the corresponding distance matrix for the data file. For this usecase distance between two gene sequences are calculated using Smith–Waterman algorithm. The code for the parallel implmentaion of <a href="https://github.com/DSC-SPIDAL/csharp/tree/master/SalsaTPL/Salsa.SmithWatermanMS">Smith–Waterman</a> algorithm is available
+<a href="https://github.com/DSC-SPIDAL/csharp/tree/master/SalsaTPL/Salsa.SmithWatermanMS">here</a>. This is very time consuming calculation even for the small dataset hence the git repo provides the distance matrix that is generated for the sample dataset.
+The distance matrix <code>distance-matrix.bin</code> which is avilable in the git repo <a href="https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/data">data folder</a>.</p>
+
+<h1 id="dimension-reduction-with-mds:39a00125390bdf0bf712c5c9614cc8c5">Dimension reduction with MDS</h1>
+
+<p>In order to visualize the data we will perform dimension reduction to reduce the data to 3D using DAMDS algorithm. The data points generated from the DAMDS algirhtm can be later used with the clusters generated
+with DAPWC to visualize the data in WebPlotViz.</p>
+
+<p>To run mds locally <a href="https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/scripts/damds"><code>run_mds.sh</code></a> script file can be used. To run in an HPC envirnment the script files inside the <a href="https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/scripts/damds/hpcscripts">hpcscripts</a> folder can bs used.
+In order to run the program you must configure the config.properties file to point to the <code>distance-matrix.bin</code> file, and edit the <code>run_mds.sh</code> file to point to the <code>config.properties</code> file. Once the configurations are
+done you can simple run the program by executing <code>./run_mds.sh</code> from the shell.</p>
+
+<p>The run will create a points file name <code>damds-points.txt</code> which will contain the 3D data points. In order to upload this data file to WebPlotViz you need to format the data to the correct format. This can be
+done using the <code>format_data.sh</code> script. The script takes a file name as an argument and formats that file and outputs the formatted file with .foramatted extention. ex usage <code>./format_data.sh damds-points.txt</code>.
+//TODO upload sample to wpv and add public link</p>
+
+<h1 id="clustering-with-dapwc:39a00125390bdf0bf712c5c9614cc8c5">Clustering with DAPWC</h1>
+
+<p>The main objective of this usecase is to cluster the data. For this we will use the DAPWC algorithm. DAPWC can work directly with the distance matrix to create clusters. The program will output a set of clusters
+and the data points that are assigned to each cluster. We can configure the number of clusters that we expect from the algorithm. A rough amount of clusters can be determined from the visualization we did in the
+previous step.</p>
+
+<p>In order to run DAPWC first we need to configure the <code>config.properties</code> file that is in <a href="https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/scripts/dapwc">scripts/dapwc</a> folder. The following parameters need to be set properly.</p>
+
+<p>ClusterFile &ndash; the output file which will contain the resulting clusters. Note: The output file changes slightly for example if you give &ldquo;cluster.txt&rdquo; and give 10 for MaxNcent the output file name will be &ldquo;cluster-M10-C10txt&rdquo;
+DistanceMatrixFile &ndash; <code>distance-matrix.bin</code> file which contains the distance matrix
+MaxNcent &ndash; the number of clusters to look for
+NumberDataPoints &ndash; the number of data points in the distance matrix, this is 2400 for this example</p>
+
+<p>Then we need to configure the <code>run_dapwc.sh</code> file to point to the <code>config.properties</code> file ( If running in an HPC environment use the files in <a href="https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/scripts/dapwc/hpcscripts">hpcscripts</a> ).</p>
+
+<p>Once the configuration is complete the program can be run using the command <code>./run_dapwc.sh</code>.</p>
+
+<h1 id="merging-results-and-visualizing:39a00125390bdf0bf712c5c9614cc8c5">Merging results and visualizing</h1>
+
+<p>Once we have outputs from both DAPWC and DAMDS algorithms we can merge the results and visualize them on WebPlotViz. In order the merge the data the script <code>merge_and_format.sh</code> can be used. The script takes in
+two arguments and will generate a file that can be uploaded to WebPlotViz</p>
+
+<ol>
+<li>The output file from the DAMDS run (ex damds-points.txt)</li>
+<li>The output file from the DAPWC run (ex cluster-M10-C10txt)</li>
+</ol>
+
+<p>Example usage :  <code>./merge_and_format.sh damds-points.txt cluster-M10-C10txt</code>, the output file will be <code>points.formatted.txt</code>.</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="https://dsc-spidal.github.io/tutorials/post/pathology_image_data_example/" rel="prev">Pathology Image Data</a></span>
+    
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+
+
+
+</body>
+</html>
+

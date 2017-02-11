@@ -40,17 +40,17 @@ Each row of a csv file (other than the first row, which is the header row) store
 
 `Note: For this tutorial we will only consider a single image "TCGA-55-8094-01Z-00-DX1.8dc29615-e124-4f17-81a1-c0b20c38d12c" for simplicity.`
 
-Sample data set can be found here - TODO: Add location of data
+Sample data set can be found here - https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data/sampledata 
 
 # Prerequisites
  
- In order to perform the pre processing download the jar file from here ( TODO Add link to jar ) or clone and build from the source. The source code for the programs are available here (TODO) and can be built using the `mvn clean install` command
+ In order to perform the pre processing download the jar file from [here](https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data/bin) (use the jar with dependencies) or clone and build from the source. The source code for the programs are available [here](https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data) and can be built using the `mvn clean install` command
 
 # Pre Processing
 
 1. Step 1: 
  Single data files need to be created for each image or a single data file needs to be created from all the images. Number of data points in each image varied. The total number of data poitns (rows in files) was around 3.95 million. The program SingleFileGeneration allows the generation of two types of tiles. First it can simply gather all the rows corresponding to a single image to a single file. Secondly it can extract portions of rows from each image to create a collated data file.
- 
+ Note: All the required script files can be found in the [scripts](https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data/scripts) folder in the git repo.
  In 
  `run_single_file_gen.sh` will run a java that creates a single file from the set of image files. The program takes the several inputs and can be configured by editing the `run_single_file_gen.sh` using an text editor.
  

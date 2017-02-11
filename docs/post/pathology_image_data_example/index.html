@@ -101,21 +101,21 @@
 
 <p><code>Note: For this tutorial we will only consider a single image &quot;TCGA-55-8094-01Z-00-DX1.8dc29615-e124-4f17-81a1-c0b20c38d12c&quot; for simplicity.</code></p>
 
-<p>Sample data set can be found here - TODO: Add location of data</p>
+<p>Sample data set can be found here - <a href="https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data/sampledata">https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data/sampledata</a></p>
 
 <h1 id="prerequisites:e4d75ecb629314b2384fe45458a3f187">Prerequisites</h1>
 
-<p>In order to perform the pre processing download the jar file from here ( TODO Add link to jar ) or clone and build from the source. The source code for the programs are available here (TODO) and can be built using the <code>mvn clean install</code> command</p>
+<p>In order to perform the pre processing download the jar file from <a href="https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data/bin">here</a> (use the jar with dependencies) or clone and build from the source. The source code for the programs are available <a href="https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data">here</a> and can be built using the <code>mvn clean install</code> command</p>
 
 <h1 id="pre-processing:e4d75ecb629314b2384fe45458a3f187">Pre Processing</h1>
 
 <ol>
 <li>Step 1:
-Single data files need to be created for each image or a single data file needs to be created from all the images. Number of data points in each image varied. The total number of data poitns (rows in files) was around 3.95 million. The program SingleFileGeneration allows the generation of two types of tiles. First it can simply gather all the rows corresponding to a single image to a single file. Secondly it can extract portions of rows from each image to create a collated data file.</li>
+Single data files need to be created for each image or a single data file needs to be created from all the images. Number of data points in each image varied. The total number of data poitns (rows in files) was around 3.95 million. The program SingleFileGeneration allows the generation of two types of tiles. First it can simply gather all the rows corresponding to a single image to a single file. Secondly it can extract portions of rows from each image to create a collated data file.
+Note: All the required script files can be found in the <a href="https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data/scripts">scripts</a> folder in the git repo.
+In
+<code>run_single_file_gen.sh</code> will run a java that creates a single file from the set of image files. The program takes the several inputs and can be configured by editing the <code>run_single_file_gen.sh</code> using an text editor.</li>
 </ol>
-
-<p>In
- <code>run_single_file_gen.sh</code> will run a java that creates a single file from the set of image files. The program takes the several inputs and can be configured by editing the <code>run_single_file_gen.sh</code> using an text editor.</p>
 
 <p>cp= Needs to point to the jar that was downloaded or built &ldquo;pathology_image_dat-jar-with-dependencies.jar&rdquo;
  dataFolder= Folder that poitns to the sample data ex - /home/tutorial/data
@@ -169,6 +169,8 @@ generated in step 1. The program takes the following parameters which can be mod
     
       <span class="previous">&larr; <a href="https://dsc-spidal.github.io/tutorials/post/install_ompi.md/" rel="prev">Installing Prerequisites</a></span>
     
+    
+      <span class="next"><a href="https://dsc-spidal.github.io/tutorials/post/fungi_gene_sequence_example/" rel="next">Fungi Gene Sequence Clustering</a> &rarr;</span>
     
   </nav>
 

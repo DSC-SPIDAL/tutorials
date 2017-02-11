@@ -10,6 +10,86 @@
     <atom:link href="https://dsc-spidal.github.io/tutorials/categories/example/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Fungi Gene Sequence Clustering</title>
+      <link>https://dsc-spidal.github.io/tutorials/post/fungi_gene_sequence_example/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://dsc-spidal.github.io/tutorials/post/fungi_gene_sequence_example/</guid>
+      <description>
+
+&lt;h1 id=&#34;introduction:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;The usecase of this example is based on a set fungal gene sequence data. For the pupose of the example we will only use a very small subset of the complete data to
+ keep the runtime at a manageable level. The aim is to cluster the gene sequence data. For this DAMDS and DAPWC algorithms will be utilized. When working with the complete data set the
+ following steps are followed ( Some steps are done iteratively to refine results further ) to generate good clustering results. For this example will only be doing a single iteration.&lt;/p&gt;
+
+&lt;p&gt;Note: For some intermediate steps data needs to be formatted before the next step can be completed. To keep the example simple the repository will provide formatted data for such cases&lt;/p&gt;
+
+&lt;h1 id=&#34;data:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Data&lt;/h1&gt;
+
+&lt;p&gt;The raw data used for the complete use case is in FASTA format. Some analysis data on the complete data set is listed below.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;There was a total of 7065846 (~7million) sequences.&lt;/li&gt;
+&lt;li&gt;Number of Unique sequences : 578486&lt;/li&gt;
+&lt;li&gt;Number of Unique sequences that appear more than once  : 170264&lt;/li&gt;
+&lt;li&gt;Number of sequence of Single Occurrence  : 408222&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For the complete use case all 170K unique sequences that appear more than once were used. For the example we will only be using 2400 gene sequences.&lt;/p&gt;
+
+&lt;h1 id=&#34;pre-processing:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Pre Processing&lt;/h1&gt;
+
+&lt;p&gt;The file &lt;code&gt;2400_gene_seq_testset.fna&lt;/code&gt; contains the 2400 gene sequences that are used in this example. This file can be found at the git repo &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/data&#34;&gt;here&lt;/a&gt; . In order to run DAMDS and DAPWC we need to
+generate the corresponding distance matrix for the data file. For this usecase distance between two gene sequences are calculated using Smith–Waterman algorithm. The code for the parallel implmentaion of &lt;a href=&#34;https://github.com/DSC-SPIDAL/csharp/tree/master/SalsaTPL/Salsa.SmithWatermanMS&#34;&gt;Smith–Waterman&lt;/a&gt; algorithm is available
+&lt;a href=&#34;https://github.com/DSC-SPIDAL/csharp/tree/master/SalsaTPL/Salsa.SmithWatermanMS&#34;&gt;here&lt;/a&gt;. This is very time consuming calculation even for the small dataset hence the git repo provides the distance matrix that is generated for the sample dataset.
+The distance matrix &lt;code&gt;distance-matrix.bin&lt;/code&gt; which is avilable in the git repo &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/data&#34;&gt;data folder&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;dimension-reduction-with-mds:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Dimension reduction with MDS&lt;/h1&gt;
+
+&lt;p&gt;In order to visualize the data we will perform dimension reduction to reduce the data to 3D using DAMDS algorithm. The data points generated from the DAMDS algirhtm can be later used with the clusters generated
+with DAPWC to visualize the data in WebPlotViz.&lt;/p&gt;
+
+&lt;p&gt;To run mds locally &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/scripts/damds&#34;&gt;&lt;code&gt;run_mds.sh&lt;/code&gt;&lt;/a&gt; script file can be used. To run in an HPC envirnment the script files inside the &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/scripts/damds/hpcscripts&#34;&gt;hpcscripts&lt;/a&gt; folder can bs used.
+In order to run the program you must configure the config.properties file to point to the &lt;code&gt;distance-matrix.bin&lt;/code&gt; file, and edit the &lt;code&gt;run_mds.sh&lt;/code&gt; file to point to the &lt;code&gt;config.properties&lt;/code&gt; file. Once the configurations are
+done you can simple run the program by executing &lt;code&gt;./run_mds.sh&lt;/code&gt; from the shell.&lt;/p&gt;
+
+&lt;p&gt;The run will create a points file name &lt;code&gt;damds-points.txt&lt;/code&gt; which will contain the 3D data points. In order to upload this data file to WebPlotViz you need to format the data to the correct format. This can be
+done using the &lt;code&gt;format_data.sh&lt;/code&gt; script. The script takes a file name as an argument and formats that file and outputs the formatted file with .foramatted extention. ex usage &lt;code&gt;./format_data.sh damds-points.txt&lt;/code&gt;.
+//TODO upload sample to wpv and add public link&lt;/p&gt;
+
+&lt;h1 id=&#34;clustering-with-dapwc:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Clustering with DAPWC&lt;/h1&gt;
+
+&lt;p&gt;The main objective of this usecase is to cluster the data. For this we will use the DAPWC algorithm. DAPWC can work directly with the distance matrix to create clusters. The program will output a set of clusters
+and the data points that are assigned to each cluster. We can configure the number of clusters that we expect from the algorithm. A rough amount of clusters can be determined from the visualization we did in the
+previous step.&lt;/p&gt;
+
+&lt;p&gt;In order to run DAPWC first we need to configure the &lt;code&gt;config.properties&lt;/code&gt; file that is in &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/scripts/dapwc&#34;&gt;scripts/dapwc&lt;/a&gt; folder. The following parameters need to be set properly.&lt;/p&gt;
+
+&lt;p&gt;ClusterFile &amp;ndash; the output file which will contain the resulting clusters. Note: The output file changes slightly for example if you give &amp;ldquo;cluster.txt&amp;rdquo; and give 10 for MaxNcent the output file name will be &amp;ldquo;cluster-M10-C10txt&amp;rdquo;
+DistanceMatrixFile &amp;ndash; &lt;code&gt;distance-matrix.bin&lt;/code&gt; file which contains the distance matrix
+MaxNcent &amp;ndash; the number of clusters to look for
+NumberDataPoints &amp;ndash; the number of data points in the distance matrix, this is 2400 for this example&lt;/p&gt;
+
+&lt;p&gt;Then we need to configure the &lt;code&gt;run_dapwc.sh&lt;/code&gt; file to point to the &lt;code&gt;config.properties&lt;/code&gt; file ( If running in an HPC environment use the files in &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/scripts/dapwc/hpcscripts&#34;&gt;hpcscripts&lt;/a&gt; ).&lt;/p&gt;
+
+&lt;p&gt;Once the configuration is complete the program can be run using the command &lt;code&gt;./run_dapwc.sh&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;merging-results-and-visualizing:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Merging results and visualizing&lt;/h1&gt;
+
+&lt;p&gt;Once we have outputs from both DAPWC and DAMDS algorithms we can merge the results and visualize them on WebPlotViz. In order the merge the data the script &lt;code&gt;merge_and_format.sh&lt;/code&gt; can be used. The script takes in
+two arguments and will generate a file that can be uploaded to WebPlotViz&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The output file from the DAMDS run (ex damds-points.txt)&lt;/li&gt;
+&lt;li&gt;The output file from the DAPWC run (ex cluster-M10-C10txt)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Example usage :  &lt;code&gt;./merge_and_format.sh damds-points.txt cluster-M10-C10txt&lt;/code&gt;, the output file will be &lt;code&gt;points.formatted.txt&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Pathology Image Data</title>
       <link>https://dsc-spidal.github.io/tutorials/post/pathology_image_data_example/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
@@ -47,21 +127,21 @@
 
 &lt;p&gt;&lt;code&gt;Note: For this tutorial we will only consider a single image &amp;quot;TCGA-55-8094-01Z-00-DX1.8dc29615-e124-4f17-81a1-c0b20c38d12c&amp;quot; for simplicity.&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Sample data set can be found here - TODO: Add location of data&lt;/p&gt;
+&lt;p&gt;Sample data set can be found here - &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data/sampledata&#34;&gt;https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data/sampledata&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;prerequisites:e4d75ecb629314b2384fe45458a3f187&#34;&gt;Prerequisites&lt;/h1&gt;
 
-&lt;p&gt;In order to perform the pre processing download the jar file from here ( TODO Add link to jar ) or clone and build from the source. The source code for the programs are available here (TODO) and can be built using the &lt;code&gt;mvn clean install&lt;/code&gt; command&lt;/p&gt;
+&lt;p&gt;In order to perform the pre processing download the jar file from &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data/bin&#34;&gt;here&lt;/a&gt; (use the jar with dependencies) or clone and build from the source. The source code for the programs are available &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data&#34;&gt;here&lt;/a&gt; and can be built using the &lt;code&gt;mvn clean install&lt;/code&gt; command&lt;/p&gt;
 
 &lt;h1 id=&#34;pre-processing:e4d75ecb629314b2384fe45458a3f187&#34;&gt;Pre Processing&lt;/h1&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Step 1:
-Single data files need to be created for each image or a single data file needs to be created from all the images. Number of data points in each image varied. The total number of data poitns (rows in files) was around 3.95 million. The program SingleFileGeneration allows the generation of two types of tiles. First it can simply gather all the rows corresponding to a single image to a single file. Secondly it can extract portions of rows from each image to create a collated data file.&lt;/li&gt;
+Single data files need to be created for each image or a single data file needs to be created from all the images. Number of data points in each image varied. The total number of data poitns (rows in files) was around 3.95 million. The program SingleFileGeneration allows the generation of two types of tiles. First it can simply gather all the rows corresponding to a single image to a single file. Secondly it can extract portions of rows from each image to create a collated data file.
+Note: All the required script files can be found in the &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data/scripts&#34;&gt;scripts&lt;/a&gt; folder in the git repo.
+In
+&lt;code&gt;run_single_file_gen.sh&lt;/code&gt; will run a java that creates a single file from the set of image files. The program takes the several inputs and can be configured by editing the &lt;code&gt;run_single_file_gen.sh&lt;/code&gt; using an text editor.&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;In
- &lt;code&gt;run_single_file_gen.sh&lt;/code&gt; will run a java that creates a single file from the set of image files. The program takes the several inputs and can be configured by editing the &lt;code&gt;run_single_file_gen.sh&lt;/code&gt; using an text editor.&lt;/p&gt;
 
 &lt;p&gt;cp= Needs to point to the jar that was downloaded or built &amp;ldquo;pathology_image_dat-jar-with-dependencies.jar&amp;rdquo;
  dataFolder= Folder that poitns to the sample data ex - /home/tutorial/data
