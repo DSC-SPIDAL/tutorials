@@ -73,7 +73,11 @@
 
 <h1 id="introduction:e4d75ecb629314b2384fe45458a3f187">Introduction</h1>
 
-<p>Small description on the data</p>
+<p>The data consist of several pathology images that are described using 96 features. There are 11 images in the dataset totaling upto around 4 million data points. The example will only use a very small
+subset of the complete data set. The visualization listed below is a result of a larger run which contained ~220K data points in total. 220K data points where selected by
+20K random row samples extracted from each image. The plot is clustered by image. Each of the 11 clusters correspond to a single image, With distance matrix outliers set to 3*sigma</p>
+
+<p>Visualization using WebPlotViz - <a href="https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1678860580">https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1678860580</a></p>
 
 <h1 id="data:e4d75ecb629314b2384fe45458a3f187">Data</h1>
 
@@ -107,54 +111,115 @@
 
 <p>In order to perform the pre processing download the jar file from <a href="https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data/bin">here</a> (use the jar with dependencies) or clone and build from the source. The source code for the programs are available <a href="https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data">here</a> and can be built using the <code>mvn clean install</code> command</p>
 
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span> <span style="color: #75715e">//Commands and steps</span>
+ <span style="color: #75715e">//If you have not the applications git repo perform the following</span>
+ <span style="color: #a6e22e">git</span> <span style="color: #a6e22e">clone</span> <span style="color: #a6e22e">https</span><span style="color: #f92672">:</span><span style="color: #75715e">//github.com/DSC-SPIDAL/applications.git</span>
+ <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">applications</span><span style="color: #f92672">/</span><span style="color: #a6e22e">pathalogy</span><span style="color: #f92672">-</span><span style="color: #a6e22e">image</span><span style="color: #f92672">-</span><span style="color: #a6e22e">data</span>
+ <span style="color: #a6e22e">mvn</span> <span style="color: #a6e22e">clean</span> <span style="color: #a6e22e">install</span>
+ <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">sampledata</span>
+ <span style="color: #a6e22e">unzip</span> <span style="color: #a6e22e">data</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">zip</span>
+</pre></div>
+
+
+<p>After building it will create a Jar file inside the <code>target</code> directory.</p>
+
 <h1 id="pre-processing:e4d75ecb629314b2384fe45458a3f187">Pre Processing</h1>
 
 <ol>
-<li>Step 1:
+<li><p>Step 1:
 Single data files need to be created for each image or a single data file needs to be created from all the images. Number of data points in each image varied. The total number of data poitns (rows in files) was around 3.95 million. The program SingleFileGeneration allows the generation of two types of tiles. First it can simply gather all the rows corresponding to a single image to a single file. Secondly it can extract portions of rows from each image to create a collated data file.
 Note: All the required script files can be found in the <a href="https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data/scripts">scripts</a> folder in the git repo.
 In
-<code>run_single_file_gen.sh</code> will run a java that creates a single file from the set of image files. The program takes the several inputs and can be configured by editing the <code>run_single_file_gen.sh</code> using an text editor.</li>
+<code>run_single_file_gen.sh</code> will run a java that creates a single file from the set of image files. The program takes the several inputs and can be configured by editing the <code>run_single_file_gen.sh</code> using an text editor.</p>
+
+<ul>
+<li><code>cp=&lt;path-to-git&gt;/applications/pathalogy-image-data/target/pathology_image_dat-jar-with-dependencies.jar</code> &ndash; Needs to point to the jar that was downloaded or built &ldquo;pathology_image_dat-jar-with-dependencies.jar&rdquo;</li>
+<li><code>dataFolder=&lt;path-to-git&gt;/applications/pathalogy-image-data/sampledata/data</code> &ndash; Folder that poitns to the sample data ex - /home/tutorial/data</li>
+<li><code>FileName=TCGA-55-8094-01Z-00-DX1.8dc29615-e124-4f17-81a1-c0b20c38d12c</code> &ndash; The name of the image to be filtered out, no need to change this.</li>
+<li><code>OuputFolder=&lt;path-to-git&gt;/applications/pathalogy-image-data/sampledata</code> &ndash; Folder to write the output file ex - /home/tutorial/results</li>
+<li><code>OutputFileName=singleImage</code>&ndash; Name of the output file</li>
+<li><code>numPoints=2000</code> &ndash; Number of data points to collect, keep this to a small number to keep runtime small ex- 2000</li>
+</ul></li>
 </ol>
 
-<p>cp= Needs to point to the jar that was downloaded or built &ldquo;pathology_image_dat-jar-with-dependencies.jar&rdquo;
- dataFolder= Folder that poitns to the sample data ex - /home/tutorial/data
- FileName=TCGA-55-8094-01Z-00-DX1.8dc29615-e124-4f17-81a1-c0b20c38d12c - The name of the image to be filtered out, no need to change this.
- OuputFolder= Folder to write the output file ex - /home/tutorial/results
- OutputFileName= Name of the output file ex -singleimage
- numPoints= Number of data points to collect, keep this to a small number to keep runtime small ex- 2000</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>  <span style="color: #75715e">//Commands and steps</span>
+  <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">applications</span><span style="color: #f92672">/</span><span style="color: #a6e22e">pathalogy</span><span style="color: #f92672">-</span><span style="color: #a6e22e">image</span><span style="color: #f92672">-</span><span style="color: #a6e22e">data</span><span style="color: #f92672">/</span><span style="color: #a6e22e">scripts</span><span style="color: #f92672">/</span><span style="color: #a6e22e">preprocessing</span><span style="color: #f92672">/</span>
+  <span style="color: #a6e22e">vim</span> <span style="color: #a6e22e">run_single_file_gen</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span> <span style="color: #75715e">// Make changes mentioned above</span>
+  <span style="color: #f8f8f2">.</span><span style="color: #f92672">/</span><span style="color: #a6e22e">run_single_file_gen</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span>
+ 
+</pre></div>
+
+
+<p>This will create a file named <code>singleimage.data</code> in the <code>&lt;path-to-git&gt;/applications/pathalogy-image-data/sampledata</code> folder.</p>
 
 <ol>
-<li>Step 2
+<li><p>Step 2
 Distance calculation is done using the data files generated in step 1. DistanceCalculation does this operation in parallel using MPI. <code>run_distance_calculation.sh</code> script file will run the Distance Calculation program to generate the distance matrix for the file
-generated in step 1. The program takes the following parameters which can be modified by opening the <code>run_distance_calculation.sh</code> file in an text editor.</li>
+generated in step 1. The program takes the following parameters which can be modified by opening the <code>run_distance_calculation.sh</code> file in an text editor.</p>
+
+<ul>
+<li><code>cp=$cp&quot;:&lt;path-to-git&gt;/applications/pathalogy-image-data/target/pathology_image_dat-jar-with-dependencies.jar&quot;</code> &ndash; Need to add the jar file to the classpath</li>
+<li><code>dataFile=&lt;path-to-git&gt;/applications/pathalogy-image-data/sampledata/singleimage.data</code> &ndash; Data file that was generated in step 1.</li>
+<li><code>points=2000</code> &ndash; number of points in data file</li>
+<li><code>dimension=96</code> &ndash; number of dimensions in the data file</li>
+<li><code>outFile=&lt;path-to-git&gt;/applications/pathalogy-image-data/sampledata/out.bin</code> &ndash; output file name</li>
+</ul></li>
 </ol>
 
-<p>cp=$cp&rdquo;:/home/tutorial/pathology_image_dat-jar-with-dependencies.jar&rdquo; &ndash; Need to add the jar file to the classpath
- dataFile=/home/tutorial/results/singleimage.data &ndash; Data file that was generated in step 1.
- points=2000 - number of points in data file
- dimension=96 - number of dimensions in the data file
- outFile=/home/tutorial/results/out.bin - output file name</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>   <span style="color: #75715e">//Commands and steps</span>
+   <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">applications</span><span style="color: #f92672">/</span><span style="color: #a6e22e">pathalogy</span><span style="color: #f92672">-</span><span style="color: #a6e22e">image</span><span style="color: #f92672">-</span><span style="color: #a6e22e">data</span><span style="color: #f92672">/</span><span style="color: #a6e22e">scripts</span><span style="color: #f92672">/</span><span style="color: #a6e22e">preprocessing</span><span style="color: #f92672">/</span>
+   <span style="color: #a6e22e">vim</span> <span style="color: #a6e22e">run_distance_calculation</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span> <span style="color: #75715e">// Make changes mentioned above</span>
+   <span style="color: #f8f8f2">.</span><span style="color: #f92672">/</span><span style="color: #a6e22e">run_distance_calculation</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span>
+  
+</pre></div>
+
+
+<p>This will create a file named <code>out.bin</code> in the <code>&lt;path-to-git&gt;/applications/pathalogy-image-data/sampledata</code> folder.</p>
 
 <h1 id="dimension-reduction-with-mds:e4d75ecb629314b2384fe45458a3f187">Dimension reduction with MDS</h1>
 
 <p>The resulting data files obtained by step 2 are used to perform dimension reduction using DAMDS. <code>run_mds.sh</code> file can be used to run the DAMDS algorithm on the data set that was generated. Only one parameter needs to specified in the file.</p>
 
-<p>confFile=/home/pulasthi/work/FushengWang/tutorial/config.properties &ndash; Points to the configuration file that is used by DAMDS</p>
+<ul>
+<li><code>confFile=/home/pulasthi/work/FushengWang/tutorial/config.properties</code> &ndash; Points to the configuration file that is used by DAMDS</li>
+</ul>
 
 <p>An sample conf file can be found in the scripts folder. The configurations specifies many parameters, but for the purpose of the tutorial only two of them need to adjusted.</p>
 
-<p>DistanceMatrixFile = /home/tutorial/results/out.bin - Needs to point to the distance file generated in step 2
- NumberDataPoints = 2000 &ndash; specifies the number of data points in the file. The example values used 2000 when creating the single data file so the value should reflect that.</p>
+<ul>
+<li><code>DistanceMatrixFile = /home/tutorial/results/out.bin</code> &ndash; Needs to point to the distance file generated in step 2</li>
+<li><code>NumberDataPoints = 2000</code> &ndash; specifies the number of data points in the file. The example values used 2000 when creating the single data file so the value should reflect that.</li>
+</ul>
 
 <p>The DAMDS program will generate several output files. The file that contains the data points that were reduced to 3 dimensions is &ldquo;damds-points.txt&rdquo; ( This can be configured in the properties file ).
  You can open the file in an text editor to look at the generated data points.</p>
+
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>    <span style="color: #75715e">//Commands and steps</span>
+    <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">applications</span><span style="color: #f92672">/</span><span style="color: #a6e22e">pathalogy</span><span style="color: #f92672">-</span><span style="color: #a6e22e">image</span><span style="color: #f92672">-</span><span style="color: #a6e22e">data</span><span style="color: #f92672">/</span><span style="color: #a6e22e">scripts</span><span style="color: #f92672">/</span><span style="color: #a6e22e">mds</span><span style="color: #f92672">/</span>
+    <span style="color: #a6e22e">vim</span> <span style="color: #a6e22e">config</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">properties</span> <span style="color: #75715e">// Make changes mentioned above</span>
+    <span style="color: #f8f8f2">.</span><span style="color: #f92672">/</span><span style="color: #a6e22e">run_mds</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span>
+   
+</pre></div>
+</p>
+
+<p>This will create a file named <code>damds-points.txt</code> in the <code>&lt;path-to-git&gt;/applications/pathalogy-image-data/scripts/mds</code> folder.</p>
 
 <h1 id="visualization:e4d75ecb629314b2384fe45458a3f187">Visualization</h1>
 
 <p>The 3D data generated from MDS can be visualized using WebPlotViz. In order upload the points file to the tool first it needs to be formatted to the correct format. <code>format_data.sh</code> performs the necessary formatting. The script takes the file that needs
  to be formatted and creates a formatted file with same name and &ldquo;.formatted&rdquo; at the end. Ex &ldquo;./format_data.sh damds-points.txt&rdquo; will output &ldquo;damds-points.txt.formatted&rdquo;. This file can then be uploaded to
  WebPlotViz to be visualized.</p>
+
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>     <span style="color: #75715e">//Commands and steps</span>
+      <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">applications</span><span style="color: #f92672">/</span><span style="color: #a6e22e">pathalogy</span><span style="color: #f92672">-</span><span style="color: #a6e22e">image</span><span style="color: #f92672">-</span><span style="color: #a6e22e">data</span><span style="color: #f92672">/</span><span style="color: #a6e22e">scripts</span>
+      <span style="color: #f8f8f2">.</span><span style="color: #f92672">/</span><span style="color: #a6e22e">format_data</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span> <span style="color: #a6e22e">mds</span><span style="color: #f92672">/</span><span style="color: #a6e22e">damds</span><span style="color: #f92672">-</span><span style="color: #a6e22e">points</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">txt</span>
+ 
+</pre></div>
+</p>
+
+<p>This will create a file named <code>damds-points.txt.formatted</code> in the <code>&lt;path-to-git&gt;/applications/pathalogy-image-data/scripts/mds</code> folder. Upload this file to <a href="https://spidal-gw.dsc.soic.indiana.edu/">WebPlotViz</a> to visualize the results in 3D space</p>
+
+<p>The resulting data is visualised in WebPlotViz <a href="https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1797346761">https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1797346761</a>. Note that since this example was done only with 2000 data points there is no visible structure.</p>
 
       
       
