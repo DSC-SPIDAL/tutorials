@@ -17,6 +17,22 @@ slug: "fungi_gene_sequence_example"
  keep the runtime at a manageable level. The aim is to cluster the gene sequence data. For this DAMDS and DAPWC algorithms will be utilized. When working with the complete data set the 
  following steps are followed ( Some steps are done iteratively to refine results further ) to generate good clustering results. For this example will only be doing a single iteration.
  
+ 
+ * 1: Process raw data to find Unique sequences that appear more than once ( 170K resulting sequences ) 
+ * 2: Run Smith–Waterman algorithm to generate distance matrix
+ * 3: Run MDS to genereate 3D data points for the data using the distance matrix
+ * 4: Run DAPWC with a low number of target clusters ( 8 clusters were used in this case ). 
+ * 5: Visualize the resulting 8 clusters to estimate number of sub clusters in each one. If 2 or more of the 8 clusters seem to be more proper when merged, they can be merged before the next iteration
+ * 6: Run DAPWC for each of the 8 clusters separately, specifying the appropriate number of clusters for each one. 
+ * 7: Visualize the new clusters and merge them were needed
+ * 8: Collect all the clusters into a single file for the final cluster result.
+ 
+ Results: Below are visualizations of the two major steps:
+ 
+ 
+ * Results for the first DAPWC run showing the first 8 clusters - https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1828982764 
+ * Final result with 65 clusters - https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1273112137
+ 
  Note: For some intermediate steps data needs to be formatted before the next step can be completed. To keep the example simple the repository will provide formatted data for such cases
 
 # Data

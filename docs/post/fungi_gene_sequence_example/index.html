@@ -77,6 +77,24 @@
  keep the runtime at a manageable level. The aim is to cluster the gene sequence data. For this DAMDS and DAPWC algorithms will be utilized. When working with the complete data set the
  following steps are followed ( Some steps are done iteratively to refine results further ) to generate good clustering results. For this example will only be doing a single iteration.</p>
 
+<ul>
+<li>1: Process raw data to find Unique sequences that appear more than once ( 170K resulting sequences )</li>
+<li>2: Run Smith–Waterman algorithm to generate distance matrix</li>
+<li>3: Run MDS to genereate 3D data points for the data using the distance matrix</li>
+<li>4: Run DAPWC with a low number of target clusters ( 8 clusters were used in this case ).</li>
+<li>5: Visualize the resulting 8 clusters to estimate number of sub clusters in each one. If 2 or more of the 8 clusters seem to be more proper when merged, they can be merged before the next iteration</li>
+<li>6: Run DAPWC for each of the 8 clusters separately, specifying the appropriate number of clusters for each one.</li>
+<li>7: Visualize the new clusters and merge them were needed</li>
+<li>8: Collect all the clusters into a single file for the final cluster result.</li>
+</ul>
+
+<p>Results: Below are visualizations of the two major steps:</p>
+
+<ul>
+<li>Results for the first DAPWC run showing the first 8 clusters - <a href="https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1828982764">https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1828982764</a></li>
+<li>Final result with 65 clusters - <a href="https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1273112137">https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1273112137</a></li>
+</ul>
+
 <p>Note: For some intermediate steps data needs to be formatted before the next step can be completed. To keep the example simple the repository will provide formatted data for such cases</p>
 
 <h1 id="data:39a00125390bdf0bf712c5c9614cc8c5">Data</h1>
