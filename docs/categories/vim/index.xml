@@ -156,6 +156,18 @@ In our case it is 1 as we run on local machine. The third argument is the number
 &lt;/p&gt;
 
 &lt;p&gt;The above command will run the example using 4 nodes.&lt;/p&gt;
+
+&lt;h1 id=&#34;dapwc:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;DAPWC&lt;/h1&gt;
+
+&lt;p&gt;Deterministic Annealing Pairwise Clustering (dapwc) is a scalable and parallel clustering program that operate on non vector space&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/dapwc.git&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;dapwc&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;After building it will create a Jar file inside the &lt;code&gt;target&lt;/code&gt; directory.&lt;/p&gt;
 </description>
     </item>
     

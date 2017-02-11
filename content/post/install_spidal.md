@@ -23,7 +23,7 @@ SPIDAL libraries depend on the common project in DSC-SPIDAL github. We need to b
 
 DA-MDS
 ======
- 
+
 DA-MDS is the deterministic annealing implementation of Multidimensional Scaling algorithm. The project can be built from the source.
  
 {{< highlight javascript >}}
@@ -71,3 +71,17 @@ You can use the `damds_slurm.sh` found in `bin` directory to run the program in 
 {{< /highlight >}}
 
 The above command will run the example using 4 nodes. 
+
+
+DAPWC
+=====
+
+Deterministic Annealing Pairwise Clustering (dapwc) is a scalable and parallel clustering program that operate on non vector space
+ 
+{{< highlight javascript >}}
+ git clone https://github.com/DSC-SPIDAL/dapwc.git
+ cd dapwc
+ mvn install
+{{< /highlight >}}
+
+After building it will create a Jar file inside the `target` directory.

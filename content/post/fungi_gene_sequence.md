@@ -53,6 +53,14 @@ generate the corresponding distance matrix for the data file. For this usecase d
 [here](https://github.com/DSC-SPIDAL/csharp/tree/master/SalsaTPL/Salsa.SmithWatermanMS). This is very time consuming calculation even for the small dataset hence the git repo provides the distance matrix that is generated for the sample dataset.
 The distance matrix `distance-matrix.bin` which is avilable in the git repo [data folder](https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/data).
 
+Commands and steps
+If you have not the applications git repo perform the following
+{{< highlight javascript >}}
+ //Commands and steps
+ //If you have not the applications git repo perform the following
+ git clone https://github.com/DSC-SPIDAL/applications.git
+{{< /highlight >}}
+
 # Dimension reduction with MDS
 
 In order to visualize the data we will perform dimension reduction to reduce the data to 3D using DAMDS algorithm. The data points generated from the DAMDS algirhtm can be later used with the clusters generated
@@ -64,7 +72,18 @@ done you can simple run the program by executing `./run_mds.sh` from the shell.
 
 The run will create a points file name `damds-points.txt` which will contain the 3D data points. In order to upload this data file to WebPlotViz you need to format the data to the correct format. This can be
 done using the `format_data.sh` script. The script takes a file name as an argument and formats that file and outputs the formatted file with .foramatted extention. ex usage `./format_data.sh damds-points.txt`.
-//TODO upload sample to wpv and add public link
+
+{{< highlight javascript >}}
+//Commands and steps - excute 1 command at a time
+ cd applications/fungi-gene-sequence/scripts/damds/
+ vim config.properties // Perform needed config changes, Only need to correct the path for the distance file
+ vim run_mds.sh // check that the correct config.properties file is configured
+ ./run_mds.sh
+ cd ..
+ ./format_data.sh damds/damds-points.txt // will create the formatted data file in the damds folder
+{{< /highlight >}}
+
+The resulting data is visualised in WebPlotViz - https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1002319877
 
 # Clustering with DAPWC
 
@@ -83,6 +102,15 @@ Then we need to configure the `run_dapwc.sh` file to point to the `config.proper
 
 Once the configuration is complete the program can be run using the command `./run_dapwc.sh`. 
 
+{{< highlight javascript >}}
+//Commands and steps - excute 1 command at a time
+ cd applications/fungi-gene-sequence/scripts/dapwc/
+ vim config.properties // Perform needed config changes,Only need to correct the path for the distance file
+ vim run_mds.sh // check that the correct config.properties file is configured
+ ./run_dapwc.sh
+{{< /highlight >}}
+
+
 # Merging results and visualizing
 
 Once we have outputs from both DAPWC and DAMDS algorithms we can merge the results and visualize them on WebPlotViz. In order the merge the data the script `merge_and_format.sh` can be used. The script takes in 
@@ -91,8 +119,16 @@ two arguments and will generate a file that can be uploaded to WebPlotViz
 1. The output file from the DAMDS run (ex damds-points.txt)
 2. The output file from the DAPWC run (ex cluster-M10-C10txt)
 
-Example usage :  `./merge_and_format.sh damds-points.txt cluster-M10-C10txt`, the output file will be `points.formatted.txt`.
- 
+{{< highlight javascript >}}
+//Commands and steps - excute 1 command at a time
+ cd applications/fungi-gene-sequence/scripts/
+ ./merge_and_format.sh damds/damds-points.txt dapwc/cluster-M10-C10txt
+{{< /highlight >}}
+
+The output file will be `points.formatted.txt`. Upload this file to [WebPlotViz](https://spidal-gw.dsc.soic.indiana.edu/) to visualize the results in 3D space
+
+The resulting data is visualised in WebPlotViz - https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/280333944
+
 
 
 
