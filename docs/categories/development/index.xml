@@ -17,22 +17,22 @@
       <guid>https://dsc-spidal.github.io/tutorials/post/fungi_gene_sequence_example/</guid>
       <description>
 
-&lt;h1 id=&#34;introduction:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Introduction&lt;/h1&gt;
+&lt;h2 id=&#34;introduction:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;The usecase of this example is based on a set fungal gene sequence data. For the pupose of the example we will only use a very small subset of the complete data to
- keep the runtime at a manageable level. The aim is to cluster the gene sequence data. For this DAMDS and DAPWC algorithms will be utilized. When working with the complete data set the
- following steps are followed ( Some steps are done iteratively to refine results further ) to generate good clustering results. For this example will only be doing a single iteration.&lt;/p&gt;
+&lt;p&gt;The use case of this example is based on a set fungal gene sequences. For the purpose of the example we will only use a very small subset of the complete data to
+ keep the runtime at a manageable level. The objective is to cluster the gene sequence data. For this DAMDS and DAPWC algorithms will be utilized. When working with the complete data set the
+ following steps are followed (Some steps are done iteratively to refine results further). For this example we will be doing a single iteration.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;1: Process raw data to find Unique sequences that appear more than once ( 170K resulting sequences )&lt;/li&gt;
-&lt;li&gt;2: Run Smith–Waterman algorithm to generate distance matrix&lt;/li&gt;
-&lt;li&gt;3: Run MDS to genereate 3D data points for the data using the distance matrix&lt;/li&gt;
-&lt;li&gt;4: Run DAPWC with a low number of target clusters ( 8 clusters were used in this case ).&lt;/li&gt;
-&lt;li&gt;5: Visualize the resulting 8 clusters to estimate number of sub clusters in each one. If 2 or more of the 8 clusters seem to be more proper when merged, they can be merged before the next iteration&lt;/li&gt;
-&lt;li&gt;6: Run DAPWC for each of the 8 clusters separately, specifying the appropriate number of clusters for each one.&lt;/li&gt;
-&lt;li&gt;7: Visualize the new clusters and merge them were needed&lt;/li&gt;
-&lt;li&gt;8: Collect all the clusters into a single file for the final cluster result.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;Process raw data to find Unique sequences that appear more than once ( 170K resulting sequences )&lt;/li&gt;
+&lt;li&gt;Run Smith–Waterman algorithm to generate distance matrix&lt;/li&gt;
+&lt;li&gt;Run MDS to genereate 3D data points for the data using the distance matrix&lt;/li&gt;
+&lt;li&gt;Run DAPWC with a low number of target clusters ( 8 clusters were used in this case ).&lt;/li&gt;
+&lt;li&gt;Visualize the resulting 8 clusters to estimate number of sub clusters in each one. If 2 or more of the 8 clusters seem to be more proper when merged, they can be merged before the next iteration&lt;/li&gt;
+&lt;li&gt;Run DAPWC for each of the 8 clusters separately, specifying the appropriate number of clusters for each one.&lt;/li&gt;
+&lt;li&gt;Visualize the new clusters and merge them where needed&lt;/li&gt;
+&lt;li&gt;Collect all the clusters into a single file for the final cluster result.&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;Results: Below are visualizations of the two major steps:&lt;/p&gt;
 
@@ -41,50 +41,60 @@
 &lt;li&gt;Final result with 65 clusters - &lt;a href=&#34;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1273112137&#34;&gt;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1273112137&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Note: For some intermediate steps data needs to be formatted before the next step can be completed. To keep the example simple the repository will provide formatted data for such cases&lt;/p&gt;
+&lt;p&gt;Note: For some intermediate steps data needs to be formatted before the next step can be completed. To keep the tutorial simple, the repository will provide formatted data for such cases.&lt;/p&gt;
 
-&lt;h1 id=&#34;data:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Data&lt;/h1&gt;
+&lt;h2 id=&#34;data:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Data&lt;/h2&gt;
 
-&lt;p&gt;The raw data used for the complete use case is in FASTA format. Some analysis data on the complete data set is listed below.&lt;/p&gt;
+&lt;p&gt;The raw data used for the complete use case is in FASTA format. Some statistics about the complete data set is listed below.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;There was a total of 7065846 (~7million) sequences.&lt;/li&gt;
-&lt;li&gt;Number of Unique sequences : 578486&lt;/li&gt;
-&lt;li&gt;Number of Unique sequences that appear more than once  : 170264&lt;/li&gt;
-&lt;li&gt;Number of sequence of Single Occurrence  : 408222&lt;/li&gt;
+&lt;li&gt;Total sequences: 7065846 (~7 million).&lt;/li&gt;
+&lt;li&gt;Number of Unique sequences: 578486&lt;/li&gt;
+&lt;li&gt;Number of Unique sequences that appear more than once: 170264&lt;/li&gt;
+&lt;li&gt;Number of sequence of Single Occurrence: 408222&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;For the complete use case all 170K unique sequences that appear more than once were used. For the example we will only be using 2400 gene sequences.&lt;/p&gt;
+&lt;p&gt;For the complete use case all 170K unique sequences that appear more than once were used. For the tutorial we will only use 2400 gene sequences.&lt;/p&gt;
 
-&lt;h1 id=&#34;pre-processing:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Pre Processing&lt;/h1&gt;
+&lt;h2 id=&#34;pre-processing:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Pre Processing&lt;/h2&gt;
 
-&lt;p&gt;The file &lt;code&gt;2400_gene_seq_testset.fna&lt;/code&gt; contains the 2400 gene sequences that are used in this example. This file can be found at the git repo &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/data&#34;&gt;here&lt;/a&gt; . In order to run DAMDS and DAPWC we need to
-generate the corresponding distance matrix for the data file. For this usecase distance between two gene sequences are calculated using Smith–Waterman algorithm. The code for the parallel implmentaion of &lt;a href=&#34;https://github.com/DSC-SPIDAL/csharp/tree/master/SalsaTPL/Salsa.SmithWatermanMS&#34;&gt;Smith–Waterman&lt;/a&gt; algorithm is available
-&lt;a href=&#34;https://github.com/DSC-SPIDAL/csharp/tree/master/SalsaTPL/Salsa.SmithWatermanMS&#34;&gt;here&lt;/a&gt;. This is very time consuming calculation even for the small dataset hence the git repo provides the distance matrix that is generated for the sample dataset.
-The distance matrix &lt;code&gt;distance-matrix.bin&lt;/code&gt; which is avilable in the git repo &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/data&#34;&gt;data folder&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;First lets get the git repo with the data and scripts to run the workflow.&lt;/p&gt;
 
-&lt;p&gt;Commands and steps
-If you have not the applications git repo perform the following
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;//Commands and steps&lt;/span&gt;
- &lt;span style=&#34;color: #75715e&#34;&gt;//If you have not the applications git repo perform the following&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;//If you have not the applications git repo perform the following&lt;/span&gt;
  &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/applications.git&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;applications&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;fungi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;gene&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sequence&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
 
-&lt;h1 id=&#34;dimension-reduction-with-mds:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Dimension reduction with MDS&lt;/h1&gt;
 
-&lt;p&gt;In order to visualize the data we will perform dimension reduction to reduce the data to 3D using DAMDS algorithm. The data points generated from the DAMDS algirhtm can be later used with the clusters generated
+&lt;p&gt;Inside the &lt;code&gt;fungi-gene-sequence&lt;/code&gt; folder there is a &lt;code&gt;data&lt;/code&gt; folder and a &lt;code&gt;script&lt;/code&gt; folder. The &lt;code&gt;data&lt;/code&gt; folder contains input data and &lt;code&gt;script&lt;/code&gt; contains the scripts to run the workflow.&lt;/p&gt;
+
+&lt;p&gt;The file &lt;code&gt;2400_gene_seq_testset.fna&lt;/code&gt; inside &lt;code&gt;data&lt;/code&gt; contains the 2400 gene sequences that are used in this example. In order to run &lt;code&gt;DAMDS&lt;/code&gt; and &lt;code&gt;DAPWC&lt;/code&gt; we need to generate the
+corresponding distance matrix for the data file. For this tutorial distance between two gene sequences are calculated using Smith–Waterman algorithm.
+The code for the parallel implementation of &lt;a href=&#34;https://github.com/DSC-SPIDAL/csharp/tree/master/SalsaTPL/Salsa.SmithWatermanMS&#34;&gt;Smith–Waterman&lt;/a&gt; algorithm is available
+&lt;a href=&#34;https://github.com/DSC-SPIDAL/csharp/tree/master/SalsaTPL/Salsa.SmithWatermanMS&#34;&gt;here&lt;/a&gt;. This is very time consuming calculation even for a small data set hence the git repo provides the distance matrix that is generated for the sample data set.
+The distance matrix &lt;code&gt;distance-matrix.bin&lt;/code&gt; which is available &lt;code&gt;data&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;// list the content of the data directory&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;ls&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;data&lt;/span&gt;
+ &lt;span style=&#34;color: #ae81ff&#34;&gt;2400&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;_gene_seq_testset&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;fna&lt;/span&gt;  &lt;span style=&#34;color: #a6e22e&#34;&gt;distance&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;matrix&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;bin&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id=&#34;dimension-reduction-with-mds:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Dimension reduction with MDS&lt;/h2&gt;
+
+&lt;p&gt;In order to visualize the data we will perform dimension reduction to reduce the data to 3D using DAMDS algorithm. The data points generated from the DAMDS algorithm can be later used with the clusters generated
 with DAPWC to visualize the data in WebPlotViz.&lt;/p&gt;
 
-&lt;p&gt;To run mds locally &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/scripts/damds&#34;&gt;&lt;code&gt;run_mds.sh&lt;/code&gt;&lt;/a&gt; script file can be used. To run in an HPC envirnment the script files inside the &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/scripts/damds/hpcscripts&#34;&gt;hpcscripts&lt;/a&gt; folder can bs used.
-In order to run the program you must configure the config.properties file to point to the &lt;code&gt;distance-matrix.bin&lt;/code&gt; file, and edit the &lt;code&gt;run_mds.sh&lt;/code&gt; file to point to the &lt;code&gt;config.properties&lt;/code&gt; file. Once the configurations are
+&lt;p&gt;To run mds locally &lt;code&gt;scripts/run_mds.sh&lt;/code&gt; script file can be used. To run in an HPC environment the script files inside the &lt;code&gt;scripts/hpcscripts&lt;/code&gt; folder can bs used.&lt;/p&gt;
+
+&lt;p&gt;In order to run the program you must configure the &lt;code&gt;config.properties&lt;/code&gt; file to point to the &lt;code&gt;distance-matrix.bin&lt;/code&gt; file, and edit the &lt;code&gt;run_mds.sh&lt;/code&gt; file to point to the &lt;code&gt;config.properties&lt;/code&gt; file. Once the configurations are
 done you can simple run the program by executing &lt;code&gt;./run_mds.sh&lt;/code&gt; from the shell.&lt;/p&gt;
 
 &lt;p&gt;The run will create a points file name &lt;code&gt;damds-points.txt&lt;/code&gt; which will contain the 3D data points. In order to upload this data file to WebPlotViz you need to format the data to the correct format. This can be
 done using the &lt;code&gt;format_data.sh&lt;/code&gt; script. The script takes a file name as an argument and formats that file and outputs the formatted file with .foramatted extention. ex usage &lt;code&gt;./format_data.sh damds-points.txt&lt;/code&gt;.&lt;/p&gt;
 
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//Commands and steps - excute 1 command at a time&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;applications&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;fungi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;gene&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sequence&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;scripts&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;damds&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;scripts&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;damds&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;
  &lt;span style=&#34;color: #a6e22e&#34;&gt;vim&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;properties&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;// Perform needed config changes, Only need to correct the path for the distance file&lt;/span&gt;
  &lt;span style=&#34;color: #a6e22e&#34;&gt;vim&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;run_mds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;// check that the correct config.properties file is configured&lt;/span&gt;
  &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;run_mds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt;
@@ -93,29 +103,31 @@ done using the &lt;code&gt;format_data.sh&lt;/code&gt; script. The script takes 
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;The resulting data is visualised in WebPlotViz - &lt;a href=&#34;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1002319877&#34;&gt;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1002319877&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The formatted file is &lt;code&gt;damds/damds-points.txt.formattedd&lt;/code&gt;. You can upload this file to WebPlotViz for visualiztion.&lt;/p&gt;
+
+&lt;p&gt;The resulting data is visualised pre-loaded in WebPlotViz - &lt;a href=&#34;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1002319877&#34;&gt;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1002319877&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;clustering-with-dapwc:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Clustering with DAPWC&lt;/h1&gt;
 
-&lt;p&gt;The main objective of this usecase is to cluster the data. For this we will use the DAPWC algorithm. DAPWC can work directly with the distance matrix to create clusters. The program will output a set of clusters
+&lt;p&gt;The main objective of this use case is to cluster the data. For this we will use the DAPWC algorithm. DAPWC can work directly with the distance matrix to create clusters. The program will output a set of clusters
 and the data points that are assigned to each cluster. We can configure the number of clusters that we expect from the algorithm. A rough amount of clusters can be determined from the visualization we did in the
 previous step.&lt;/p&gt;
 
-&lt;p&gt;In order to run DAPWC first we need to configure the &lt;code&gt;config.properties&lt;/code&gt; file that is in &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/scripts/dapwc&#34;&gt;scripts/dapwc&lt;/a&gt; folder. The following parameters need to be set properly.&lt;/p&gt;
+&lt;p&gt;In order to run DAPWC first we need to configure the &lt;code&gt;config.properties&lt;/code&gt; file that is in &lt;code&gt;scripts/dapwc&lt;/code&gt; folder. The following parameters need to be set properly.&lt;/p&gt;
 
 &lt;p&gt;ClusterFile &amp;ndash; the output file which will contain the resulting clusters. Note: The output file changes slightly for example if you give &amp;ldquo;cluster.txt&amp;rdquo; and give 10 for MaxNcent the output file name will be &amp;ldquo;cluster-M10-C10txt&amp;rdquo;
 DistanceMatrixFile &amp;ndash; &lt;code&gt;distance-matrix.bin&lt;/code&gt; file which contains the distance matrix
 MaxNcent &amp;ndash; the number of clusters to look for
 NumberDataPoints &amp;ndash; the number of data points in the distance matrix, this is 2400 for this example&lt;/p&gt;
 
-&lt;p&gt;Then we need to configure the &lt;code&gt;run_dapwc.sh&lt;/code&gt; file to point to the &lt;code&gt;config.properties&lt;/code&gt; file ( If running in an HPC environment use the files in &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/scripts/dapwc/hpcscripts&#34;&gt;hpcscripts&lt;/a&gt; ).&lt;/p&gt;
+&lt;p&gt;Then we need to configure the &lt;code&gt;run_dapwc.sh&lt;/code&gt; file to point to the &lt;code&gt;config.properties&lt;/code&gt; file ( If running in an HPC environment use the files in &lt;code&gt;hpcscripts&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Once the configuration is complete the program can be run using the command &lt;code&gt;./run_dapwc.sh&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//Commands and steps - excute 1 command at a time&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;//Commands and steps - execute 1 command at a time&lt;/span&gt;
  &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;applications&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;fungi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;gene&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sequence&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;scripts&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;dapwc&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;vim&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;properties&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;// Perform needed config changes,Only need to correct the path for the distance file&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;vim&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;run_mds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;// check that the correct config.properties file is configured&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;vim&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;properties&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;// Perform needed config changes for ClusterFile and DistanceMatrixFile&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;vim&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;run_dapwc&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;// check that the correct config.properties file is configured&lt;/span&gt;
  &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;run_dapwc&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
