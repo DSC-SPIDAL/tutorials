@@ -6,13 +6,13 @@
     <description>Recent content in Vim on SPIDAL Tutorials</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Apr 2012 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Feb 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://dsc-spidal.github.io/tutorials/categories/vim/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Installing Prerequisites</title>
       <link>https://dsc-spidal.github.io/tutorials/post/install_ompi.md/</link>
-      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 11 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://dsc-spidal.github.io/tutorials/post/install_ompi.md/</guid>
       <description>
@@ -95,7 +95,7 @@
     <item>
       <title>Installing SPIDAL Software</title>
       <link>https://dsc-spidal.github.io/tutorials/post/install_spidal/</link>
-      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://dsc-spidal.github.io/tutorials/post/install_spidal/</guid>
       <description>
