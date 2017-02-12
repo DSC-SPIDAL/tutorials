@@ -99,7 +99,8 @@ The formatted file is `damds/damds-points.txt.formattedd`. You can upload this f
 
 The resulting data is pre-loaded in WebPlotViz - https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1002319877
 
-# Clustering with DAPWC
+Clustering with DAPWC
+---------------------
 
 The main objective of this use case is to cluster the data. For this we will use the DAPWC algorithm. DAPWC can work directly with the distance matrix to create clusters. The program will output a set of clusters
 and the data points that are assigned to each cluster. We can configure the number of clusters that we expect from the algorithm. A rough amount of clusters can be determined from the visualization we did in the
@@ -125,7 +126,8 @@ Once the configuration is complete the program can be run using the command `./r
 {{< /highlight >}}
 
 
-# Merging results and visualizing
+Merging results and visualizing
+-------------------------------
 
 Once we have outputs from both DAPWC and DAMDS algorithms we can merge the results and visualize them on WebPlotViz. In order the merge the data the script `merge_and_format.sh` can be used. The script takes in 
 two arguments and will generate a file that can be uploaded to WebPlotViz
