@@ -97,7 +97,7 @@ done using the `format_data.sh` script. The script takes a file name as an argum
 
 The formatted file is `damds/damds-points.txt.formattedd`. You can upload this file to WebPlotViz for visualiztion.
 
-The resulting data is visualised pre-loaded in WebPlotViz - https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1002319877
+The resulting data is pre-loaded in WebPlotViz - https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1002319877
 
 # Clustering with DAPWC
 
@@ -141,7 +141,7 @@ two arguments and will generate a file that can be uploaded to WebPlotViz
 
 The output file will be `points.formatted.txt`. Upload this file to [WebPlotViz](https://spidal-gw.dsc.soic.indiana.edu/) to visualize the results in 3D space
 
-The resulting data is visualised in WebPlotViz - https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/280333944
+The resulting data is pre-loaded in WebPlotViz - https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/280333944
 
 
 
