@@ -2,8 +2,8 @@
 title: "Pathology Image Data"
 description: "Example usecase of DAMDS with Pathology Image Data"
 tags: []
-lastmod: 2017-02-10
-date: "2017-02-10"
+lastmod: 2017-02-08
+date: "2017-02-08"
 categories:
   - "Development"
   - "Example"

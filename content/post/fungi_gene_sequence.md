@@ -2,8 +2,8 @@
 title: "Fungi Gene Sequence Clustering"
 description: "Example usecase of DAMDS and DAPWC with gene sequence data for clustering"
 tags: []
-lastmod: 2017-02-10
-date: "2017-02-10"
+lastmod: 2017-02-09
+date: "2017-02-09"
 categories:
   - "Development"
   - "Example"

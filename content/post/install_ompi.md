@@ -2,8 +2,8 @@
 title: "Installing Prerequisites"
 description: "Install OpenMPI 1.10.1 and Java on a Linux machine"
 tags: []
-lastmod: 2015-12-23
-date: "2012-04-06"
+lastmod: 2017-02-11
+date: "2017-02-11"
 categories:
   - "Development"
   - "VIM"
