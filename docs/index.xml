@@ -6,33 +6,195 @@
     <description>Recent content on SPIDAL Tutorials</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Feb 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://dsc-spidal.github.io/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Installing Prerequisites</title>
+      <link>https://dsc-spidal.github.io/tutorials/post/install_ompi.md/</link>
+      <pubDate>Sat, 11 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://dsc-spidal.github.io/tutorials/post/install_ompi.md/</guid>
+      <description>
+
+&lt;h1 id=&#34;prerequisites:529b66b2fe7b69acab780432cc5eade5&#34;&gt;Prerequisites&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Operating System&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SPDIAL is extensively tested and known to work on,&lt;/li&gt;
+&lt;li&gt;Red Hat Enterprise Linux Server release 6.7 (Santiago)&lt;/li&gt;
+&lt;li&gt;Red Hat Enterprise Linux Server release 5.10 (Tikanga)&lt;/li&gt;
+&lt;li&gt;Ubuntu 14.04 LTS&lt;/li&gt;
+&lt;li&gt;This may work in Windows systems depending on the ability to setup OpenMPI properly, however, this has not been tested and we recommend choosing a Linux based operating system instead.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Java&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download Oracle JDK 8 from &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/index.html&#34;&gt;http://www.oracle.com/technetwork/java/javase/downloads/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract the archive to a folder named jdk1.8.0&lt;/li&gt;
+&lt;li&gt;Set the following environment variables.
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;JAVA_HOME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;jdk1&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;.8.0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;directory&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$JAVA_HOME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bin&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$PATH&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;JAVA_HOME&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Apache Maven&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download latest Maven release from &lt;a href=&#34;http://maven.apache.org/download.cgi&#34;&gt;http://maven.apache.org/download.cgi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract it to some folder and set the following environment variables.
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;MVN_HOME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Maven&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;folder&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;$PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$MVN_HOME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bin&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$PATH&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;MVN_HOME&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;OpenMPI&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We recommend using &lt;code&gt;OpenMPI 1.10.1&lt;/code&gt; although it work with the previous 1.8 versions. Note, if using a version other than 1.10.1 please remember to set Maven dependency appropriately in the &lt;code&gt;pom.xml&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Download OpenMPI 1.10.1 from &lt;a href=&#34;http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&#34;&gt;http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract the archive to a folder named &lt;code&gt;openmpi-1.10.1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Also create a directory named &lt;code&gt;build&lt;/code&gt; in some location. We will use this to install OpenMPI
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;   &lt;span style=&#34;color: #f8f8f2&#34;&gt;wget&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;no&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;check&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;certificate&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;http&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&lt;/span&gt;
+   &lt;span style=&#34;color: #f8f8f2&#34;&gt;tar&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;xvf&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;openmpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1.10.1&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;tar&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;gz&lt;/span&gt;
+   &lt;span style=&#34;color: #f8f8f2&#34;&gt;mkdir&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;build&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Set the following environment variables
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;BUILD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;directory&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;OMPI_1101&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;openmpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1.10.1&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;directory&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BUILD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bin&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$PATH&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;LD_LIBRARY_PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BUILD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;lib&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$LD_LIBRARY_PATH&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;BUILD&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;OMPI_1101&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;LD_LIBRARY_PATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;The instructions to build OpenMPI depend on the platform. Therefore, we highly recommend looking into the &lt;code&gt;$OMPI_1101/INSTALL&lt;/code&gt; file. Platform specific build files are available in &lt;code&gt;$OMPI_1101/contrib/platform&lt;/code&gt; directory.&lt;/li&gt;
+&lt;li&gt;In general, please specify &lt;code&gt;--prefix=$BUILD&lt;/code&gt; and &lt;code&gt;--enable-mpi-java&lt;/code&gt; as arguments to &lt;code&gt;configure&lt;/code&gt; script. If Infiniband is available (highly recommended) specify &lt;code&gt;--with-verbs=&amp;lt;path-to-verbs-installation&amp;gt;&lt;/code&gt;. Usually, the path to verbs installation is &lt;code&gt;/usr&lt;/code&gt;. In summary, the following commands will build OpenMPI for a Linux system. Also if you have a multicore machine using &lt;code&gt;make -j 8&lt;/code&gt; will use 8 cores to build in parallel.
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;$OMPI_1101&lt;/span&gt;
+    &lt;span style=&#34;color: #f92672&#34;&gt;./&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;configure&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;prefix&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BUILD&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;enable&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;java&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;make&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;24&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;make&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;If everything goes well &lt;code&gt;mpirun --version&lt;/code&gt; will show &lt;code&gt;mpirun (Open MPI) 1.10.1&lt;/code&gt;. Execute the following command to instal &lt;code&gt;$OMPI_1101/ompi/mpi/java/java/mpi.jar&lt;/code&gt; as a Maven artifact.
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;install&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;install&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;file&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DcreateChecksum&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Dpackaging&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;jar&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Dfile&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$OMPI_1101&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;ompi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;java&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;java&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;jar&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DgroupId&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;ompi&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DartifactId&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;ompijavabinding&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Dversion&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1.10.1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Few examples are available in &lt;code&gt;$OMPI_1101/examples&lt;/code&gt;. Please use &lt;code&gt;mpijavac&lt;/code&gt; with other parameters similar to &lt;code&gt;javac&lt;/code&gt; command to compile OpenMPI Java programs. Once compiled &lt;code&gt;mpirun [options] java -cp &amp;lt;classpath&amp;gt; class-name arguments&lt;/code&gt; command with proper values set as arguments will run the MPI Java program.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Installing SPIDAL Software</title>
+      <link>https://dsc-spidal.github.io/tutorials/post/install_spidal/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://dsc-spidal.github.io/tutorials/post/install_spidal/</guid>
+      <description>
+
+&lt;h1 id=&#34;common:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;common&lt;/h1&gt;
+
+&lt;p&gt;SPIDAL libraries depend on the common project in DSC-SPIDAL github. We need to build it first.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/common.git&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;common&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1 id=&#34;da-mds:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;DA-MDS&lt;/h1&gt;
+
+&lt;p&gt;DA-MDS is the deterministic annealing implementation of Multidimensional Scaling algorithm. The project can be built from the source.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/damds.git&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;damds&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After building it will create a Jar file inside the &lt;code&gt;target&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;Usually people run MDS using a cluster manager such as slurm. We have provided a sample script in &lt;code&gt;bin&lt;/code&gt; directory that can be used to run the program on a single machine.&lt;/p&gt;
+
+&lt;h2 id=&#34;run-example-local-machine:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;Run example - local machine&lt;/h2&gt;
+
+&lt;p&gt;DA-MDS is configured using a configuration file. A sample configuration file with two input files for distance and weight matrices can be found in &lt;code&gt;examples/input&lt;/code&gt; folder.&lt;/p&gt;
+
+&lt;p&gt;Lets run this sample using the &lt;code&gt;damds.sh&lt;/code&gt; file found in &lt;code&gt;bin&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;bin&lt;/span&gt;
+ &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;damds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;examples&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;properties&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The first argument to the script is the location of configuration file. Second argument is the number of nodes.
+In our case it is 1 as we run on local machine. The third argument is the number of processes. In this case we are using 4 processes.&lt;/p&gt;
+
+&lt;p&gt;After the program finished executing, the output will be in a file called &lt;code&gt;damds-points.txt&lt;/code&gt; inside the &lt;code&gt;bin&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;You can upload this file to &lt;code&gt;WebPlotViz&lt;/code&gt; using the following link to visualize the data. Note: you may need to register in WebPlotViz before you can upload the files.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//spidal-gw.dsc.soic.indiana.edu/dashboard&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;run-example-slurm-cluster:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;Run example - slurm cluster&lt;/h2&gt;
+
+&lt;p&gt;You can use the &lt;code&gt;damds_slurm.sh&lt;/code&gt; found in &lt;code&gt;bin&lt;/code&gt; directory to run the program in a &lt;code&gt;slurm&lt;/code&gt; HPC cluster. In this example we assume that you have built &lt;code&gt;damds&lt;/code&gt; in a shared file system where every node can access the data files with the same file path.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;bin&lt;/span&gt;
+ &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;damds_slurm&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;examples&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;properties&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The above command will run the example using 4 nodes.&lt;/p&gt;
+
+&lt;h1 id=&#34;dapwc:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;DAPWC&lt;/h1&gt;
+
+&lt;p&gt;Deterministic Annealing Pairwise Clustering (dapwc) is a scalable and parallel clustering program that operate on non vector space&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/dapwc.git&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;dapwc&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;After building it will create a Jar file inside the &lt;code&gt;target&lt;/code&gt; directory.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Fungi Gene Sequence Clustering</title>
       <link>https://dsc-spidal.github.io/tutorials/post/fungi_gene_sequence_example/</link>
-      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 09 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://dsc-spidal.github.io/tutorials/post/fungi_gene_sequence_example/</guid>
       <description>
 
-&lt;h1 id=&#34;introduction:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Introduction&lt;/h1&gt;
+&lt;h2 id=&#34;introduction:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;The usecase of this example is based on a set fungal gene sequence data. For the pupose of the example we will only use a very small subset of the complete data to
- keep the runtime at a manageable level. The aim is to cluster the gene sequence data. For this DAMDS and DAPWC algorithms will be utilized. When working with the complete data set the
- following steps are followed ( Some steps are done iteratively to refine results further ) to generate good clustering results. For this example will only be doing a single iteration.&lt;/p&gt;
+&lt;p&gt;The use case of this example is based on a set fungal gene sequences. For the purpose of the example we will only use a very small subset of the complete data to
+ keep the runtime at a manageable level. The objective is to cluster the gene sequence data. For this DAMDS and DAPWC algorithms will be utilized. When working with the complete data set the
+ following steps are followed (Some steps are done iteratively to refine results further). For this example we will be doing a single iteration.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;1: Process raw data to find Unique sequences that appear more than once ( 170K resulting sequences )&lt;/li&gt;
-&lt;li&gt;2: Run Smith–Waterman algorithm to generate distance matrix&lt;/li&gt;
-&lt;li&gt;3: Run MDS to genereate 3D data points for the data using the distance matrix&lt;/li&gt;
-&lt;li&gt;4: Run DAPWC with a low number of target clusters ( 8 clusters were used in this case ).&lt;/li&gt;
-&lt;li&gt;5: Visualize the resulting 8 clusters to estimate number of sub clusters in each one. If 2 or more of the 8 clusters seem to be more proper when merged, they can be merged before the next iteration&lt;/li&gt;
-&lt;li&gt;6: Run DAPWC for each of the 8 clusters separately, specifying the appropriate number of clusters for each one.&lt;/li&gt;
-&lt;li&gt;7: Visualize the new clusters and merge them were needed&lt;/li&gt;
-&lt;li&gt;8: Collect all the clusters into a single file for the final cluster result.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;Process raw data to find Unique sequences that appear more than once ( 170K resulting sequences )&lt;/li&gt;
+&lt;li&gt;Run Smith–Waterman algorithm to generate distance matrix&lt;/li&gt;
+&lt;li&gt;Run MDS to genereate 3D data points for the data using the distance matrix&lt;/li&gt;
+&lt;li&gt;Run DAPWC with a low number of target clusters ( 8 clusters were used in this case ).&lt;/li&gt;
+&lt;li&gt;Visualize the resulting 8 clusters to estimate number of sub clusters in each one. If 2 or more of the 8 clusters seem to be more proper when merged, they can be merged before the next iteration&lt;/li&gt;
+&lt;li&gt;Run DAPWC for each of the 8 clusters separately, specifying the appropriate number of clusters for each one.&lt;/li&gt;
+&lt;li&gt;Visualize the new clusters and merge them where needed&lt;/li&gt;
+&lt;li&gt;Collect all the clusters into a single file for the final cluster result.&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;Results: Below are visualizations of the two major steps:&lt;/p&gt;
 
@@ -41,50 +203,60 @@
 &lt;li&gt;Final result with 65 clusters - &lt;a href=&#34;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1273112137&#34;&gt;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1273112137&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Note: For some intermediate steps data needs to be formatted before the next step can be completed. To keep the example simple the repository will provide formatted data for such cases&lt;/p&gt;
+&lt;p&gt;Note: For some intermediate steps data needs to be formatted before the next step can be completed. To keep the tutorial simple, the repository will provide formatted data for such cases.&lt;/p&gt;
 
-&lt;h1 id=&#34;data:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Data&lt;/h1&gt;
+&lt;h2 id=&#34;data:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Data&lt;/h2&gt;
 
-&lt;p&gt;The raw data used for the complete use case is in FASTA format. Some analysis data on the complete data set is listed below.&lt;/p&gt;
+&lt;p&gt;The raw data used for the complete use case is in FASTA format. Some statistics about the complete data set is listed below.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;There was a total of 7065846 (~7million) sequences.&lt;/li&gt;
-&lt;li&gt;Number of Unique sequences : 578486&lt;/li&gt;
-&lt;li&gt;Number of Unique sequences that appear more than once  : 170264&lt;/li&gt;
-&lt;li&gt;Number of sequence of Single Occurrence  : 408222&lt;/li&gt;
+&lt;li&gt;Total sequences: 7065846 (~7 million).&lt;/li&gt;
+&lt;li&gt;Number of Unique sequences: 578486&lt;/li&gt;
+&lt;li&gt;Number of Unique sequences that appear more than once: 170264&lt;/li&gt;
+&lt;li&gt;Number of sequence of Single Occurrence: 408222&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;For the complete use case all 170K unique sequences that appear more than once were used. For the example we will only be using 2400 gene sequences.&lt;/p&gt;
+&lt;p&gt;For the complete use case all 170K unique sequences that appear more than once were used. For the tutorial we will only use 2400 gene sequences.&lt;/p&gt;
 
-&lt;h1 id=&#34;pre-processing:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Pre Processing&lt;/h1&gt;
+&lt;h2 id=&#34;pre-processing:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Pre Processing&lt;/h2&gt;
 
-&lt;p&gt;The file &lt;code&gt;2400_gene_seq_testset.fna&lt;/code&gt; contains the 2400 gene sequences that are used in this example. This file can be found at the git repo &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/data&#34;&gt;here&lt;/a&gt; . In order to run DAMDS and DAPWC we need to
-generate the corresponding distance matrix for the data file. For this usecase distance between two gene sequences are calculated using Smith–Waterman algorithm. The code for the parallel implmentaion of &lt;a href=&#34;https://github.com/DSC-SPIDAL/csharp/tree/master/SalsaTPL/Salsa.SmithWatermanMS&#34;&gt;Smith–Waterman&lt;/a&gt; algorithm is available
-&lt;a href=&#34;https://github.com/DSC-SPIDAL/csharp/tree/master/SalsaTPL/Salsa.SmithWatermanMS&#34;&gt;here&lt;/a&gt;. This is very time consuming calculation even for the small dataset hence the git repo provides the distance matrix that is generated for the sample dataset.
-The distance matrix &lt;code&gt;distance-matrix.bin&lt;/code&gt; which is avilable in the git repo &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/data&#34;&gt;data folder&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;First lets get the git repo with the data and scripts to run the workflow.&lt;/p&gt;
 
-&lt;p&gt;Commands and steps
-If you have not the applications git repo perform the following
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;//Commands and steps&lt;/span&gt;
- &lt;span style=&#34;color: #75715e&#34;&gt;//If you have not the applications git repo perform the following&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;//If you have not the applications git repo perform the following&lt;/span&gt;
  &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/applications.git&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;applications&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;fungi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;gene&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sequence&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
 
-&lt;h1 id=&#34;dimension-reduction-with-mds:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Dimension reduction with MDS&lt;/h1&gt;
 
-&lt;p&gt;In order to visualize the data we will perform dimension reduction to reduce the data to 3D using DAMDS algorithm. The data points generated from the DAMDS algirhtm can be later used with the clusters generated
+&lt;p&gt;Inside the &lt;code&gt;fungi-gene-sequence&lt;/code&gt; folder there is a &lt;code&gt;data&lt;/code&gt; folder and a &lt;code&gt;script&lt;/code&gt; folder. The &lt;code&gt;data&lt;/code&gt; folder contains input data and &lt;code&gt;script&lt;/code&gt; contains the scripts to run the workflow.&lt;/p&gt;
+
+&lt;p&gt;The file &lt;code&gt;2400_gene_seq_testset.fna&lt;/code&gt; inside &lt;code&gt;data&lt;/code&gt; contains the 2400 gene sequences that are used in this example. In order to run &lt;code&gt;DAMDS&lt;/code&gt; and &lt;code&gt;DAPWC&lt;/code&gt; we need to generate the
+corresponding distance matrix for the data file. For this tutorial distance between two gene sequences are calculated using Smith–Waterman algorithm.
+The code for the parallel implementation of &lt;a href=&#34;https://github.com/DSC-SPIDAL/csharp/tree/master/SalsaTPL/Salsa.SmithWatermanMS&#34;&gt;Smith–Waterman&lt;/a&gt; algorithm is available
+&lt;a href=&#34;https://github.com/DSC-SPIDAL/csharp/tree/master/SalsaTPL/Salsa.SmithWatermanMS&#34;&gt;here&lt;/a&gt;. This is very time consuming calculation even for a small data set hence the git repo provides the distance matrix that is generated for the sample data set.
+The distance matrix &lt;code&gt;distance-matrix.bin&lt;/code&gt; which is available &lt;code&gt;data&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;// list the content of the data directory&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;ls&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;data&lt;/span&gt;
+ &lt;span style=&#34;color: #ae81ff&#34;&gt;2400&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;_gene_seq_testset&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;fna&lt;/span&gt;  &lt;span style=&#34;color: #a6e22e&#34;&gt;distance&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;matrix&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;bin&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id=&#34;dimension-reduction-with-mds:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Dimension reduction with MDS&lt;/h2&gt;
+
+&lt;p&gt;In order to visualize the data we will perform dimension reduction to reduce the data to 3D using DAMDS algorithm. The data points generated from the DAMDS algorithm can be later used with the clusters generated
 with DAPWC to visualize the data in WebPlotViz.&lt;/p&gt;
 
-&lt;p&gt;To run mds locally &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/scripts/damds&#34;&gt;&lt;code&gt;run_mds.sh&lt;/code&gt;&lt;/a&gt; script file can be used. To run in an HPC envirnment the script files inside the &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/scripts/damds/hpcscripts&#34;&gt;hpcscripts&lt;/a&gt; folder can bs used.
-In order to run the program you must configure the config.properties file to point to the &lt;code&gt;distance-matrix.bin&lt;/code&gt; file, and edit the &lt;code&gt;run_mds.sh&lt;/code&gt; file to point to the &lt;code&gt;config.properties&lt;/code&gt; file. Once the configurations are
+&lt;p&gt;To run mds locally &lt;code&gt;scripts/run_mds.sh&lt;/code&gt; script file can be used. To run in an HPC environment the script files inside the &lt;code&gt;scripts/hpcscripts&lt;/code&gt; folder can bs used.&lt;/p&gt;
+
+&lt;p&gt;In order to run the program you must configure the &lt;code&gt;config.properties&lt;/code&gt; file to point to the &lt;code&gt;distance-matrix.bin&lt;/code&gt; file, and edit the &lt;code&gt;run_mds.sh&lt;/code&gt; file to point to the &lt;code&gt;config.properties&lt;/code&gt; file. Once the configurations are
 done you can simple run the program by executing &lt;code&gt;./run_mds.sh&lt;/code&gt; from the shell.&lt;/p&gt;
 
 &lt;p&gt;The run will create a points file name &lt;code&gt;damds-points.txt&lt;/code&gt; which will contain the 3D data points. In order to upload this data file to WebPlotViz you need to format the data to the correct format. This can be
 done using the &lt;code&gt;format_data.sh&lt;/code&gt; script. The script takes a file name as an argument and formats that file and outputs the formatted file with .foramatted extention. ex usage &lt;code&gt;./format_data.sh damds-points.txt&lt;/code&gt;.&lt;/p&gt;
 
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//Commands and steps - excute 1 command at a time&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;applications&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;fungi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;gene&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sequence&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;scripts&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;damds&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;scripts&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;damds&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;
  &lt;span style=&#34;color: #a6e22e&#34;&gt;vim&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;properties&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;// Perform needed config changes, Only need to correct the path for the distance file&lt;/span&gt;
  &lt;span style=&#34;color: #a6e22e&#34;&gt;vim&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;run_mds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;// check that the correct config.properties file is configured&lt;/span&gt;
  &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;run_mds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt;
@@ -93,34 +265,36 @@ done using the &lt;code&gt;format_data.sh&lt;/code&gt; script. The script takes 
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;The resulting data is visualised in WebPlotViz - &lt;a href=&#34;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1002319877&#34;&gt;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1002319877&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The formatted file is &lt;code&gt;damds/damds-points.txt.formattedd&lt;/code&gt;. You can upload this file to WebPlotViz for visualiztion.&lt;/p&gt;
 
-&lt;h1 id=&#34;clustering-with-dapwc:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Clustering with DAPWC&lt;/h1&gt;
+&lt;p&gt;The resulting data is pre-loaded in WebPlotViz - &lt;a href=&#34;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1002319877&#34;&gt;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1002319877&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;The main objective of this usecase is to cluster the data. For this we will use the DAPWC algorithm. DAPWC can work directly with the distance matrix to create clusters. The program will output a set of clusters
+&lt;h2 id=&#34;clustering-with-dapwc:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Clustering with DAPWC&lt;/h2&gt;
+
+&lt;p&gt;The main objective of this use case is to cluster the data. For this we will use the DAPWC algorithm. DAPWC can work directly with the distance matrix to create clusters. The program will output a set of clusters
 and the data points that are assigned to each cluster. We can configure the number of clusters that we expect from the algorithm. A rough amount of clusters can be determined from the visualization we did in the
 previous step.&lt;/p&gt;
 
-&lt;p&gt;In order to run DAPWC first we need to configure the &lt;code&gt;config.properties&lt;/code&gt; file that is in &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/scripts/dapwc&#34;&gt;scripts/dapwc&lt;/a&gt; folder. The following parameters need to be set properly.&lt;/p&gt;
+&lt;p&gt;In order to run DAPWC first we need to configure the &lt;code&gt;config.properties&lt;/code&gt; file that is in &lt;code&gt;scripts/dapwc&lt;/code&gt; folder. The following parameters need to be set properly.&lt;/p&gt;
 
 &lt;p&gt;ClusterFile &amp;ndash; the output file which will contain the resulting clusters. Note: The output file changes slightly for example if you give &amp;ldquo;cluster.txt&amp;rdquo; and give 10 for MaxNcent the output file name will be &amp;ldquo;cluster-M10-C10txt&amp;rdquo;
 DistanceMatrixFile &amp;ndash; &lt;code&gt;distance-matrix.bin&lt;/code&gt; file which contains the distance matrix
 MaxNcent &amp;ndash; the number of clusters to look for
 NumberDataPoints &amp;ndash; the number of data points in the distance matrix, this is 2400 for this example&lt;/p&gt;
 
-&lt;p&gt;Then we need to configure the &lt;code&gt;run_dapwc.sh&lt;/code&gt; file to point to the &lt;code&gt;config.properties&lt;/code&gt; file ( If running in an HPC environment use the files in &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/fungi-gene-sequence/scripts/dapwc/hpcscripts&#34;&gt;hpcscripts&lt;/a&gt; ).&lt;/p&gt;
+&lt;p&gt;Then we need to configure the &lt;code&gt;run_dapwc.sh&lt;/code&gt; file to point to the &lt;code&gt;config.properties&lt;/code&gt; file ( If running in an HPC environment use the files in &lt;code&gt;hpcscripts&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Once the configuration is complete the program can be run using the command &lt;code&gt;./run_dapwc.sh&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//Commands and steps - excute 1 command at a time&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;//Commands and steps - execute 1 command at a time&lt;/span&gt;
  &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;applications&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;fungi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;gene&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sequence&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;scripts&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;dapwc&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;vim&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;properties&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;// Perform needed config changes,Only need to correct the path for the distance file&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;vim&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;run_mds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;// check that the correct config.properties file is configured&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;vim&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;properties&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;// Perform needed config changes for ClusterFile and DistanceMatrixFile&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;vim&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;run_dapwc&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt; &lt;span style=&#34;color: #75715e&#34;&gt;// check that the correct config.properties file is configured&lt;/span&gt;
  &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;run_dapwc&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
-&lt;h1 id=&#34;merging-results-and-visualizing:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Merging results and visualizing&lt;/h1&gt;
+&lt;h2 id=&#34;merging-results-and-visualizing:39a00125390bdf0bf712c5c9614cc8c5&#34;&gt;Merging results and visualizing&lt;/h2&gt;
 
 &lt;p&gt;Once we have outputs from both DAPWC and DAMDS algorithms we can merge the results and visualize them on WebPlotViz. In order the merge the data the script &lt;code&gt;merge_and_format.sh&lt;/code&gt; can be used. The script takes in
 two arguments and will generate a file that can be uploaded to WebPlotViz&lt;/p&gt;
@@ -138,19 +312,19 @@ two arguments and will generate a file that can be uploaded to WebPlotViz&lt;/p&
 
 &lt;p&gt;The output file will be &lt;code&gt;points.formatted.txt&lt;/code&gt;. Upload this file to &lt;a href=&#34;https://spidal-gw.dsc.soic.indiana.edu/&#34;&gt;WebPlotViz&lt;/a&gt; to visualize the results in 3D space&lt;/p&gt;
 
-&lt;p&gt;The resulting data is visualised in WebPlotViz - &lt;a href=&#34;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/280333944&#34;&gt;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/280333944&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The resulting data is pre-loaded in WebPlotViz - &lt;a href=&#34;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/280333944&#34;&gt;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/280333944&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Pathology Image Data</title>
       <link>https://dsc-spidal.github.io/tutorials/post/pathology_image_data_example/</link>
-      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://dsc-spidal.github.io/tutorials/post/pathology_image_data_example/</guid>
       <description>
 
-&lt;h1 id=&#34;introduction:e4d75ecb629314b2384fe45458a3f187&#34;&gt;Introduction&lt;/h1&gt;
+&lt;h2 id=&#34;introduction:e4d75ecb629314b2384fe45458a3f187&#34;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;The data consist of several pathology images that are described using 96 features. There are 11 images in the dataset totaling upto around 4 million data points. The example will only use a very small
 subset of the complete data set. The visualization listed below is a result of a larger run which contained ~220K data points in total. 220K data points where selected by
@@ -158,7 +332,7 @@ subset of the complete data set. The visualization listed below is a result of a
 
 &lt;p&gt;Visualization using WebPlotViz - &lt;a href=&#34;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1678860580&#34;&gt;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1678860580&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;data:e4d75ecb629314b2384fe45458a3f187&#34;&gt;Data&lt;/h1&gt;
+&lt;h2 id=&#34;data:e4d75ecb629314b2384fe45458a3f187&#34;&gt;Data&lt;/h2&gt;
 
 &lt;p&gt;The filename encodes some information about the tile and the source image. For example, take the following file.&lt;/p&gt;
 
@@ -194,7 +368,7 @@ subset of the complete data set. The visualization listed below is a result of a
  &lt;span style=&#34;color: #75715e&#34;&gt;//If you have not the applications git repo perform the following&lt;/span&gt;
  &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/applications.git&lt;/span&gt;
  &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;applications&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;pathalogy&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;image&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;data&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clean&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;install&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;install&lt;/span&gt;
  &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;sampledata&lt;/span&gt;
  &lt;span style=&#34;color: #a6e22e&#34;&gt;unzip&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;zip&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -209,7 +383,7 @@ subset of the complete data set. The visualization listed below is a result of a
 Single data files need to be created for each image or a single data file needs to be created from all the images. Number of data points in each image varied. The total number of data poitns (rows in files) was around 3.95 million. The program SingleFileGeneration allows the generation of two types of tiles. First it can simply gather all the rows corresponding to a single image to a single file. Secondly it can extract portions of rows from each image to create a collated data file.
 Note: All the required script files can be found in the &lt;a href=&#34;https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data/scripts&#34;&gt;scripts&lt;/a&gt; folder in the git repo.
 In
-&lt;code&gt;run_single_file_gen.sh&lt;/code&gt; will run a java that creates a single file from the set of image files. The program takes the several inputs and can be configured by editing the &lt;code&gt;run_single_file_gen.sh&lt;/code&gt; using an text editor.&lt;/p&gt;
+&lt;code&gt;run_single_file_gen.sh&lt;/code&gt; will run a java that creates a single file from the set of image files. The program takes the several inputs and can be configured by editing the &lt;code&gt;run_single_file_gen.sh&lt;/code&gt; using a text editor.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;cp=&amp;lt;path-to-git&amp;gt;/applications/pathalogy-image-data/target/pathology_image_dat-jar-with-dependencies.jar&lt;/code&gt; &amp;ndash; Needs to point to the jar that was downloaded or built &amp;ldquo;pathology_image_dat-jar-with-dependencies.jar&amp;rdquo;&lt;/li&gt;
@@ -299,168 +473,6 @@ generated in step 1. The program takes the following parameters which can be mod
 &lt;p&gt;This will create a file named &lt;code&gt;damds-points.txt.formatted&lt;/code&gt; in the &lt;code&gt;&amp;lt;path-to-git&amp;gt;/applications/pathalogy-image-data/scripts/mds&lt;/code&gt; folder. Upload this file to &lt;a href=&#34;https://spidal-gw.dsc.soic.indiana.edu/&#34;&gt;WebPlotViz&lt;/a&gt; to visualize the results in 3D space&lt;/p&gt;
 
 &lt;p&gt;The resulting data is visualised in WebPlotViz &lt;a href=&#34;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1797346761&#34;&gt;https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1797346761&lt;/a&gt;. Note that since this example was done only with 2000 data points there is no visible structure.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Installing Prerequisites</title>
-      <link>https://dsc-spidal.github.io/tutorials/post/install_ompi.md/</link>
-      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://dsc-spidal.github.io/tutorials/post/install_ompi.md/</guid>
-      <description>
-
-&lt;h1 id=&#34;prerequisites:529b66b2fe7b69acab780432cc5eade5&#34;&gt;Prerequisites&lt;/h1&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Operating System&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;SPDIAL is extensively tested and known to work on,&lt;/li&gt;
-&lt;li&gt;Red Hat Enterprise Linux Server release 6.7 (Santiago)&lt;/li&gt;
-&lt;li&gt;Red Hat Enterprise Linux Server release 5.10 (Tikanga)&lt;/li&gt;
-&lt;li&gt;Ubuntu 14.04 LTS&lt;/li&gt;
-&lt;li&gt;This may work in Windows systems depending on the ability to setup OpenMPI properly, however, this has not been tested and we recommend choosing a Linux based operating system instead.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Java&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Download Oracle JDK 8 from &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/index.html&#34;&gt;http://www.oracle.com/technetwork/java/javase/downloads/index.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Extract the archive to a folder named jdk1.8.0&lt;/li&gt;
-&lt;li&gt;Set the following environment variables.
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;JAVA_HOME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;jdk1&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;.8.0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;directory&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$JAVA_HOME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bin&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$PATH&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;JAVA_HOME&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Apache Maven&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Download latest Maven release from &lt;a href=&#34;http://maven.apache.org/download.cgi&#34;&gt;http://maven.apache.org/download.cgi&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Extract it to some folder and set the following environment variables.
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;MVN_HOME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Maven&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;folder&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;$PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$MVN_HOME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bin&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$PATH&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;MVN_HOME&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;OpenMPI&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;We recommend using &lt;code&gt;OpenMPI 1.10.1&lt;/code&gt; although it work with the previous 1.8 versions. Note, if using a version other than 1.10.1 please remember to set Maven dependency appropriately in the &lt;code&gt;pom.xml&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Download OpenMPI 1.10.1 from &lt;a href=&#34;http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&#34;&gt;http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Extract the archive to a folder named &lt;code&gt;openmpi-1.10.1&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Also create a directory named &lt;code&gt;build&lt;/code&gt; in some location. We will use this to install OpenMPI
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;   &lt;span style=&#34;color: #f8f8f2&#34;&gt;wget&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;no&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;check&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;certificate&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;http&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&lt;/span&gt;
-   &lt;span style=&#34;color: #f8f8f2&#34;&gt;tar&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;xvf&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;openmpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1.10.1&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;tar&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;gz&lt;/span&gt;
-   &lt;span style=&#34;color: #f8f8f2&#34;&gt;mkdir&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;build&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Set the following environment variables
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;BUILD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;directory&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;OMPI_1101&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;openmpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1.10.1&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;directory&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BUILD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bin&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$PATH&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;LD_LIBRARY_PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BUILD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;lib&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$LD_LIBRARY_PATH&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;BUILD&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;OMPI_1101&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;LD_LIBRARY_PATH&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;The instructions to build OpenMPI depend on the platform. Therefore, we highly recommend looking into the &lt;code&gt;$OMPI_1101/INSTALL&lt;/code&gt; file. Platform specific build files are available in &lt;code&gt;$OMPI_1101/contrib/platform&lt;/code&gt; directory.&lt;/li&gt;
-&lt;li&gt;In general, please specify &lt;code&gt;--prefix=$BUILD&lt;/code&gt; and &lt;code&gt;--enable-mpi-java&lt;/code&gt; as arguments to &lt;code&gt;configure&lt;/code&gt; script. If Infiniband is available (highly recommended) specify &lt;code&gt;--with-verbs=&amp;lt;path-to-verbs-installation&amp;gt;&lt;/code&gt;. Usually, the path to verbs installation is &lt;code&gt;/usr&lt;/code&gt;. In summary, the following commands will build OpenMPI for a Linux system. Also if you have a multicore machine using &lt;code&gt;make -j 8&lt;/code&gt; will use 8 cores to build in parallel.
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;$OMPI_1101&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;./&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;configure&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;prefix&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BUILD&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;enable&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;java&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;make&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;24&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;make&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;install&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;If everything goes well &lt;code&gt;mpirun --version&lt;/code&gt; will show &lt;code&gt;mpirun (Open MPI) 1.10.1&lt;/code&gt;. Execute the following command to instal &lt;code&gt;$OMPI_1101/ompi/mpi/java/java/mpi.jar&lt;/code&gt; as a Maven artifact.
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;install&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;install&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;file&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DcreateChecksum&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Dpackaging&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;jar&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Dfile&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$OMPI_1101&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;ompi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;java&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;java&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;jar&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DgroupId&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;ompi&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DartifactId&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;ompijavabinding&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Dversion&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1.10.1&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;Few examples are available in &lt;code&gt;$OMPI_1101/examples&lt;/code&gt;. Please use &lt;code&gt;mpijavac&lt;/code&gt; with other parameters similar to &lt;code&gt;javac&lt;/code&gt; command to compile OpenMPI Java programs. Once compiled &lt;code&gt;mpirun [options] java -cp &amp;lt;classpath&amp;gt; class-name arguments&lt;/code&gt; command with proper values set as arguments will run the MPI Java program.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Installing SPIDAL Software</title>
-      <link>https://dsc-spidal.github.io/tutorials/post/install_spidal/</link>
-      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://dsc-spidal.github.io/tutorials/post/install_spidal/</guid>
-      <description>
-
-&lt;h1 id=&#34;common:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;common&lt;/h1&gt;
-
-&lt;p&gt;SPIDAL libraries depend on the common project in DSC-SPIDAL github. We need to build it first.&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/common.git&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;common&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;install&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h1 id=&#34;da-mds:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;DA-MDS&lt;/h1&gt;
-
-&lt;p&gt;DA-MDS is the deterministic annealing implementation of Multidimensional Scaling algorithm. The project can be built from the source.&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/damds.git&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;damds&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;install&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;After building it will create a Jar file inside the &lt;code&gt;target&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;p&gt;Usually people run MDS using a cluster manager such as slurm. We have provided a sample script in &lt;code&gt;bin&lt;/code&gt; directory that can be used to run the program on a single machine.&lt;/p&gt;
-
-&lt;h2 id=&#34;run-example-local-machine:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;Run example - local machine&lt;/h2&gt;
-
-&lt;p&gt;DA-MDS is configured using a configuration file. A sample configuration file with two input files for distance and weight matrices can be found in &lt;code&gt;examples/input&lt;/code&gt; folder.&lt;/p&gt;
-
-&lt;p&gt;Lets run this sample using the &lt;code&gt;damds.sh&lt;/code&gt; file found in &lt;code&gt;bin&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;bin&lt;/span&gt;
- &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;damds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;examples&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;properties&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;The first argument to the script is the location of configuration file. Second argument is the number of nodes.
-In our case it is 1 as we run on local machine. The third argument is the number of processes. In this case we are using 4 processes.&lt;/p&gt;
-
-&lt;p&gt;After the program finished executing, the output will be in a file called &lt;code&gt;damds-points.txt&lt;/code&gt; inside the &lt;code&gt;bin&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;p&gt;You can upload this file to &lt;code&gt;WebPlotViz&lt;/code&gt; using the following link to visualize the data. Note: you may need to register in WebPlotViz before you can upload the files.&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//spidal-gw.dsc.soic.indiana.edu/dashboard&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&#34;run-example-slurm-cluster:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;Run example - slurm cluster&lt;/h2&gt;
-
-&lt;p&gt;You can use the &lt;code&gt;damds_slurm.sh&lt;/code&gt; found in &lt;code&gt;bin&lt;/code&gt; directory to run the program in a &lt;code&gt;slurm&lt;/code&gt; HPC cluster. In this example we assume that you have built &lt;code&gt;damds&lt;/code&gt; in a shared file system where every node can access the data files with the same file path.&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;bin&lt;/span&gt;
- &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;damds_slurm&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;examples&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;properties&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;p&gt;The above command will run the example using 4 nodes.&lt;/p&gt;
-
-&lt;h1 id=&#34;dapwc:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;DAPWC&lt;/h1&gt;
-
-&lt;p&gt;Deterministic Annealing Pairwise Clustering (dapwc) is a scalable and parallel clustering program that operate on non vector space&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/dapwc.git&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;dapwc&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;install&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;p&gt;After building it will create a Jar file inside the &lt;code&gt;target&lt;/code&gt; directory.&lt;/p&gt;
 </description>
     </item>
     

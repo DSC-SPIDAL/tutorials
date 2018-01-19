@@ -2,15 +2,16 @@
 title: "Pathology Image Data"
 description: "Example usecase of DAMDS with Pathology Image Data"
 tags: []
-lastmod: 2017-02-10
-date: "2017-02-10"
+lastmod: 2017-02-08
+date: "2017-02-08"
 categories:
   - "Development"
   - "Example"
 slug: "pathology_image_data_example"
 ---  
 
-# Introduction
+Introduction
+------------
 
 The data consist of several pathology images that are described using 96 features. There are 11 images in the dataset totaling upto around 4 million data points. The example will only use a very small
 subset of the complete data set. The visualization listed below is a result of a larger run which contained ~220K data points in total. 220K data points where selected by 
@@ -18,7 +19,8 @@ subset of the complete data set. The visualization listed below is a result of a
 
 Visualization using WebPlotViz - https://spidal-gw.dsc.soic.indiana.edu/public/resultsets/1678860580
 
-# Data
+Data
+----
 
 The filename encodes some information about the tile and the source image. For example, take the following file. 
 
@@ -55,7 +57,7 @@ Sample data set can be found here - https://github.com/DSC-SPIDAL/applications/t
  //If you have not the applications git repo perform the following
  git clone https://github.com/DSC-SPIDAL/applications.git
  cd applications/pathalogy-image-data
- mvn clean install
+ mvn install
  cd sampledata
  unzip data.zip
 {{< /highlight >}}
@@ -68,7 +70,7 @@ After building it will create a Jar file inside the `target` directory.
  Single data files need to be created for each image or a single data file needs to be created from all the images. Number of data points in each image varied. The total number of data poitns (rows in files) was around 3.95 million. The program SingleFileGeneration allows the generation of two types of tiles. First it can simply gather all the rows corresponding to a single image to a single file. Secondly it can extract portions of rows from each image to create a collated data file.
  Note: All the required script files can be found in the [scripts](https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data/scripts) folder in the git repo.
  In 
- `run_single_file_gen.sh` will run a java that creates a single file from the set of image files. The program takes the several inputs and can be configured by editing the `run_single_file_gen.sh` using an text editor.
+ `run_single_file_gen.sh` will run a java that creates a single file from the set of image files. The program takes the several inputs and can be configured by editing the `run_single_file_gen.sh` using a text editor.
  
  * `cp=<path-to-git>/applications/pathalogy-image-data/target/pathology_image_dat-jar-with-dependencies.jar` -- Needs to point to the jar that was downloaded or built "pathology_image_dat-jar-with-dependencies.jar"
  * `dataFolder=<path-to-git>/applications/pathalogy-image-data/sampledata/data` -- Folder that poitns to the sample data ex - /home/tutorial/data
