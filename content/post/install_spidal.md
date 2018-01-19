@@ -18,7 +18,22 @@ SPIDAL libraries depend on the common project in DSC-SPIDAL github. We need to b
 {{< highlight javascript >}}
  git clone https://github.com/DSC-SPIDAL/common.git
  cd common
- mvn install
+ keytool -import -file ./resources/ricecert/cs.rice.edu.cer -keystore /tmp/riceKeyStore
+{{< /highlight >}}
+
+You can change the name of the key store and the path to it if you prefer to.
+This command will first ask for a password, provide any password of your choosing with at least 6 characters
+then it will show the following
+
+{{< highlight javascript >}}
+Trust this certificate? [no]: 
+{{< /highlight >}}
+
+type "y" and then press enter. Now the SSL cert has been properly installed.
+Next use the following command to compile the code
+
+{{< highlight javascript >}}
+mvn -Djavax.net.ssl.trustStore=/tmp/riceKeyStore clean install
 {{< /highlight >}}
 
 DA-MDS
