@@ -111,7 +111,7 @@ subset of the complete data set. The visualization listed below is a result of a
 
 <p>In order to perform the pre processing download the jar file from <a href="https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data/bin">here</a> (use the jar with dependencies) or clone and build from the source. The source code for the programs are available <a href="https://github.com/DSC-SPIDAL/applications/tree/master/pathalogy-image-data">here</a> and can be built using the <code>mvn clean install</code> command</p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span> <span style="color: #75715e">//Commands and steps</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"> <span style="color: #75715e">//Commands and steps</span>
  <span style="color: #75715e">//If you have not the applications git repo perform the following</span>
  <span style="color: #a6e22e">git</span> <span style="color: #a6e22e">clone</span> <span style="color: #a6e22e">https</span><span style="color: #f92672">:</span><span style="color: #75715e">//github.com/DSC-SPIDAL/applications.git</span>
  <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">applications</span><span style="color: #f92672">/</span><span style="color: #a6e22e">pathalogy</span><span style="color: #f92672">-</span><span style="color: #a6e22e">image</span><span style="color: #f92672">-</span><span style="color: #a6e22e">data</span>
@@ -142,7 +142,7 @@ In
 </ul></li>
 </ol>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>  <span style="color: #75715e">//Commands and steps</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">  <span style="color: #75715e">//Commands and steps</span>
   <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">applications</span><span style="color: #f92672">/</span><span style="color: #a6e22e">pathalogy</span><span style="color: #f92672">-</span><span style="color: #a6e22e">image</span><span style="color: #f92672">-</span><span style="color: #a6e22e">data</span><span style="color: #f92672">/</span><span style="color: #a6e22e">scripts</span><span style="color: #f92672">/</span><span style="color: #a6e22e">preprocessing</span><span style="color: #f92672">/</span>
   <span style="color: #a6e22e">vim</span> <span style="color: #a6e22e">run_single_file_gen</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span> <span style="color: #75715e">// Make changes mentioned above</span>
   <span style="color: #f8f8f2">.</span><span style="color: #f92672">/</span><span style="color: #a6e22e">run_single_file_gen</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span>
@@ -166,7 +166,7 @@ generated in step 1. The program takes the following parameters which can be mod
 </ul></li>
 </ol>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>   <span style="color: #75715e">//Commands and steps</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">   <span style="color: #75715e">//Commands and steps</span>
    <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">applications</span><span style="color: #f92672">/</span><span style="color: #a6e22e">pathalogy</span><span style="color: #f92672">-</span><span style="color: #a6e22e">image</span><span style="color: #f92672">-</span><span style="color: #a6e22e">data</span><span style="color: #f92672">/</span><span style="color: #a6e22e">scripts</span><span style="color: #f92672">/</span><span style="color: #a6e22e">preprocessing</span><span style="color: #f92672">/</span>
    <span style="color: #a6e22e">vim</span> <span style="color: #a6e22e">run_distance_calculation</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span> <span style="color: #75715e">// Make changes mentioned above</span>
    <span style="color: #f8f8f2">.</span><span style="color: #f92672">/</span><span style="color: #a6e22e">run_distance_calculation</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span>
@@ -194,7 +194,7 @@ generated in step 1. The program takes the following parameters which can be mod
 <p>The DAMDS program will generate several output files. The file that contains the data points that were reduced to 3 dimensions is &ldquo;damds-points.txt&rdquo; ( This can be configured in the properties file ).
  You can open the file in an text editor to look at the generated data points.</p>
 
-<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>    <span style="color: #75715e">//Commands and steps</span>
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%">    <span style="color: #75715e">//Commands and steps</span>
     <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">applications</span><span style="color: #f92672">/</span><span style="color: #a6e22e">pathalogy</span><span style="color: #f92672">-</span><span style="color: #a6e22e">image</span><span style="color: #f92672">-</span><span style="color: #a6e22e">data</span><span style="color: #f92672">/</span><span style="color: #a6e22e">scripts</span><span style="color: #f92672">/</span><span style="color: #a6e22e">mds</span><span style="color: #f92672">/</span>
     <span style="color: #a6e22e">vim</span> <span style="color: #a6e22e">config</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">properties</span> <span style="color: #75715e">// Make changes mentioned above</span>
     <span style="color: #f8f8f2">.</span><span style="color: #f92672">/</span><span style="color: #a6e22e">run_mds</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span>
@@ -210,7 +210,7 @@ generated in step 1. The program takes the following parameters which can be mod
  to be formatted and creates a formatted file with same name and &ldquo;.formatted&rdquo; at the end. Ex &ldquo;./format_data.sh damds-points.txt&rdquo; will output &ldquo;damds-points.txt.formatted&rdquo;. This file can then be uploaded to
  WebPlotViz to be visualized.</p>
 
-<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>     <span style="color: #75715e">//Commands and steps</span>
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%">     <span style="color: #75715e">//Commands and steps</span>
       <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">applications</span><span style="color: #f92672">/</span><span style="color: #a6e22e">pathalogy</span><span style="color: #f92672">-</span><span style="color: #a6e22e">image</span><span style="color: #f92672">-</span><span style="color: #a6e22e">data</span><span style="color: #f92672">/</span><span style="color: #a6e22e">scripts</span>
       <span style="color: #f8f8f2">.</span><span style="color: #f92672">/</span><span style="color: #a6e22e">format_data</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span> <span style="color: #a6e22e">mds</span><span style="color: #f92672">/</span><span style="color: #a6e22e">damds</span><span style="color: #f92672">-</span><span style="color: #a6e22e">points</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">txt</span>
  

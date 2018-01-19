@@ -114,7 +114,7 @@
 
 <p>First lets get the git repo with the data and scripts to run the workflow.</p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span> <span style="color: #75715e">//If you have not the applications git repo perform the following</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"> <span style="color: #75715e">//If you have not the applications git repo perform the following</span>
  <span style="color: #a6e22e">git</span> <span style="color: #a6e22e">clone</span> <span style="color: #a6e22e">https</span><span style="color: #f92672">:</span><span style="color: #75715e">//github.com/DSC-SPIDAL/applications.git</span>
  <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">applications</span><span style="color: #f92672">/</span><span style="color: #a6e22e">fungi</span><span style="color: #f92672">-</span><span style="color: #a6e22e">gene</span><span style="color: #f92672">-</span><span style="color: #a6e22e">sequence</span>
 </pre></div>
@@ -128,7 +128,7 @@ The code for the parallel implementation of <a href="https://github.com/DSC-SPID
 <a href="https://github.com/DSC-SPIDAL/csharp/tree/master/SalsaTPL/Salsa.SmithWatermanMS">here</a>. This is very time consuming calculation even for a small data set hence the git repo provides the distance matrix that is generated for the sample data set.
 The distance matrix <code>distance-matrix.bin</code> which is available <code>data</code> directory.</p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span> <span style="color: #75715e">// list the content of the data directory</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"> <span style="color: #75715e">// list the content of the data directory</span>
  <span style="color: #a6e22e">ls</span> <span style="color: #a6e22e">data</span>
  <span style="color: #ae81ff">2400</span><span style="color: #a6e22e">_gene_seq_testset</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">fna</span>  <span style="color: #a6e22e">distance</span><span style="color: #f92672">-</span><span style="color: #a6e22e">matrix</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">bin</span>
 </pre></div>
@@ -147,7 +147,7 @@ done you can simple run the program by executing <code>./run_mds.sh</code> from 
 <p>The run will create a points file name <code>damds-points.txt</code> which will contain the 3D data points. In order to upload this data file to WebPlotViz you need to format the data to the correct format. This can be
 done using the <code>format_data.sh</code> script. The script takes a file name as an argument and formats that file and outputs the formatted file with .foramatted extention. ex usage <code>./format_data.sh damds-points.txt</code>.</p>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">//Commands and steps - excute 1 command at a time</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">//Commands and steps - excute 1 command at a time</span>
  <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">scripts</span><span style="color: #f92672">/</span><span style="color: #a6e22e">damds</span><span style="color: #f92672">/</span>
  <span style="color: #a6e22e">vim</span> <span style="color: #a6e22e">config</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">properties</span> <span style="color: #75715e">// Perform needed config changes, Only need to correct the path for the distance file</span>
  <span style="color: #a6e22e">vim</span> <span style="color: #a6e22e">run_mds</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span> <span style="color: #75715e">// check that the correct config.properties file is configured</span>
@@ -178,7 +178,7 @@ NumberDataPoints &ndash; the number of data points in the distance matrix, this 
 
 <p>Once the configuration is complete the program can be run using the command <code>./run_dapwc.sh</code>.</p>
 
-<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span> <span style="color: #75715e">//Commands and steps - execute 1 command at a time</span>
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"> <span style="color: #75715e">//Commands and steps - execute 1 command at a time</span>
  <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">applications</span><span style="color: #f92672">/</span><span style="color: #a6e22e">fungi</span><span style="color: #f92672">-</span><span style="color: #a6e22e">gene</span><span style="color: #f92672">-</span><span style="color: #a6e22e">sequence</span><span style="color: #f92672">/</span><span style="color: #a6e22e">scripts</span><span style="color: #f92672">/</span><span style="color: #a6e22e">dapwc</span><span style="color: #f92672">/</span>
  <span style="color: #a6e22e">vim</span> <span style="color: #a6e22e">config</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">properties</span> <span style="color: #75715e">// Perform needed config changes for ClusterFile and DistanceMatrixFile</span>
  <span style="color: #a6e22e">vim</span> <span style="color: #a6e22e">run_dapwc</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span> <span style="color: #75715e">// check that the correct config.properties file is configured</span>
@@ -196,7 +196,7 @@ two arguments and will generate a file that can be uploaded to WebPlotViz</p>
 <li>The output file from the DAPWC run (ex cluster-M10-C10txt)</li>
 </ol>
 
-<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">//Commands and steps - excute 1 command at a time</span>
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">//Commands and steps - excute 1 command at a time</span>
  <span style="color: #a6e22e">cd</span> <span style="color: #a6e22e">applications</span><span style="color: #f92672">/</span><span style="color: #a6e22e">fungi</span><span style="color: #f92672">-</span><span style="color: #a6e22e">gene</span><span style="color: #f92672">-</span><span style="color: #a6e22e">sequence</span><span style="color: #f92672">/</span><span style="color: #a6e22e">scripts</span><span style="color: #f92672">/</span>
  <span style="color: #f8f8f2">.</span><span style="color: #f92672">/</span><span style="color: #a6e22e">merge_and_format</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">sh</span> <span style="color: #a6e22e">damds</span><span style="color: #f92672">/</span><span style="color: #a6e22e">damds</span><span style="color: #f92672">-</span><span style="color: #a6e22e">points</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">txt</span> <span style="color: #a6e22e">dapwc</span><span style="color: #f92672">/</span><span style="color: #a6e22e">cluster</span><span style="color: #f92672">-</span><span style="color: #a6e22e">M10</span><span style="color: #f92672">-</span><span style="color: #a6e22e">C10txt</span>
 </pre></div>
