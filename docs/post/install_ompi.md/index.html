@@ -115,10 +115,12 @@
 <li>We recommend using <code>OpenMPI 1.10.1</code> although it work with the previous 1.8 versions. Note, if using a version other than 1.10.1 please remember to set Maven dependency appropriately in the <code>pom.xml</code>.</li>
 <li>Download OpenMPI 1.10.1 from <a href="http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz">http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz</a></li>
 <li>Extract the archive to a folder named <code>openmpi-1.10.1</code></li>
-<li>Also create a directory named <code>build</code> in some location. We will use this to install OpenMPI
+<li>Also create a directory named <code>build</code> in some location. We will use this to install OpenMPI</li>
+<li>And install g++ if not already installed
 <div class="highlight" style="background: #272822"><pre style="line-height: 125%">   <span style="color: #f8f8f2">wget</span> <span style="color: #f92672">--</span><span style="color: #f8f8f2">no</span><span style="color: #f92672">-</span><span style="color: #f8f8f2">check</span><span style="color: #f92672">-</span><span style="color: #f8f8f2">certificate</span> <span style="color: #f8f8f2">http</span><span style="color: #f92672">:</span><span style="color: #75715e">//www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz</span>
    <span style="color: #f8f8f2">tar</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">xvf</span> <span style="color: #f8f8f2">openmpi</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1.10</span><span style="color: #f92672">.</span><span style="color: #ae81ff">1</span><span style="color: #f92672">.</span><span style="color: #a6e22e">tar</span><span style="color: #f92672">.</span><span style="color: #a6e22e">gz</span>
    <span style="color: #f8f8f2">mkdir</span> <span style="color: #f8f8f2">build</span>
+   <span style="color: #f8f8f2">sudo</span> <span style="color: #f8f8f2">apt</span><span style="color: #f92672">-</span><span style="color: #f8f8f2">get</span> <span style="color: #f8f8f2">install</span> <span style="color: #f8f8f2">g</span><span style="color: #f92672">++</span>
 </pre></div>
 <br /></li>
 <li>Set the following environment variables

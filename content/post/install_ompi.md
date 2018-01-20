@@ -42,10 +42,12 @@ slug: "install_ompi.md"
   * Download OpenMPI 1.10.1 from http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz
   * Extract the archive to a folder named `openmpi-1.10.1`
   * Also create a directory named `build` in some location. We will use this to install OpenMPI
+  * And install g++ if not already installed
 {{< highlight java >}}
    wget --no-check-certificate http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz
    tar -xvf openmpi-1.10.1.tar.gz
    mkdir build
+   sudo apt-get install g++
 {{< /highlight >}}  
   * Set the following environment variables
 {{< highlight java >}}
