@@ -33,7 +33,7 @@ slug: "install_ompi.md"
   * Extract it to some folder and set the following environment variables.
 {{< highlight java >}}
     MVN_HOME=<path-to-Maven-folder>
-    $PATH=$MVN_HOME/bin:$PATH
+    PATH=$MVN_HOME/bin:$PATH
     export MVN_HOME PATH
 {{< /highlight >}}
 
