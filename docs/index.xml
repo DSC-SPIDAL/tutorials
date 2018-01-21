@@ -26,7 +26,7 @@
 &lt;li&gt;SPDIAL is extensively tested and known to work on,&lt;/li&gt;
 &lt;li&gt;Red Hat Enterprise Linux Server release 6.7 (Santiago)&lt;/li&gt;
 &lt;li&gt;Red Hat Enterprise Linux Server release 5.10 (Tikanga)&lt;/li&gt;
-&lt;li&gt;Ubuntu 14.04 LTS&lt;/li&gt;
+&lt;li&gt;Ubuntu 14.04 LTS, 16.04 LTS&lt;/li&gt;
 &lt;li&gt;This may work in Windows systems depending on the ability to setup OpenMPI properly, however, this has not been tested and we recommend choosing a Linux based operating system instead.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 

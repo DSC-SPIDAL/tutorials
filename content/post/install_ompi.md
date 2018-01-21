@@ -16,7 +16,7 @@ slug: "install_ompi.md"
   * SPDIAL is extensively tested and known to work on,
     *  Red Hat Enterprise Linux Server release 6.7 (Santiago)
     *  Red Hat Enterprise Linux Server release 5.10 (Tikanga)
-    *  Ubuntu 14.04 LTS 
+    *  Ubuntu 14.04 LTS, 16.04 LTS
   * This may work in Windows systems depending on the ability to setup OpenMPI properly, however, this has not been tested and we recommend choosing a Linux based operating system instead.
 
 2. Java
