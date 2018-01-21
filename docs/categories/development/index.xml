@@ -6,192 +6,13 @@
     <description>Recent content in Development on SPIDAL Tutorials</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jan 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://dsc-spidal.github.io/tutorials/categories/development/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Installing Prerequisites</title>
-      <link>https://dsc-spidal.github.io/tutorials/post/install_ompi.md/</link>
-      <pubDate>Sat, 11 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://dsc-spidal.github.io/tutorials/post/install_ompi.md/</guid>
-      <description>
-
-&lt;h1 id=&#34;prerequisites:529b66b2fe7b69acab780432cc5eade5&#34;&gt;Prerequisites&lt;/h1&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Operating System&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;SPDIAL is extensively tested and known to work on,&lt;/li&gt;
-&lt;li&gt;Red Hat Enterprise Linux Server release 6.7 (Santiago)&lt;/li&gt;
-&lt;li&gt;Red Hat Enterprise Linux Server release 5.10 (Tikanga)&lt;/li&gt;
-&lt;li&gt;Ubuntu 14.04 LTS&lt;/li&gt;
-&lt;li&gt;This may work in Windows systems depending on the ability to setup OpenMPI properly, however, this has not been tested and we recommend choosing a Linux based operating system instead.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Java&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Download Oracle JDK 8 from &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/index.html&#34;&gt;http://www.oracle.com/technetwork/java/javase/downloads/index.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Extract the archive to a folder named jdk1.8.0&lt;/li&gt;
-&lt;li&gt;Set the following environment variables.
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;JAVA_HOME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;jdk1&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;8.0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;directory&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$JAVA_HOME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bin&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$PATH&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;JAVA_HOME&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Apache Maven&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Download latest Maven release from &lt;a href=&#34;http://maven.apache.org/download.cgi&#34;&gt;http://maven.apache.org/download.cgi&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Extract it to some folder and set the following environment variables.
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;MVN_HOME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Maven&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;folder&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$MVN_HOME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bin&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$PATH&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;MVN_HOME&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;OpenMPI&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;We recommend using &lt;code&gt;OpenMPI 1.10.1&lt;/code&gt; although it work with the previous 1.8 versions. Note, if using a version other than 1.10.1 please remember to set Maven dependency appropriately in the &lt;code&gt;pom.xml&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Download OpenMPI 1.10.1 from &lt;a href=&#34;http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&#34;&gt;http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Extract the archive to a folder named &lt;code&gt;openmpi-1.10.1&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Also create a directory named &lt;code&gt;build&lt;/code&gt; in some location. We will use this to install OpenMPI&lt;/li&gt;
-&lt;li&gt;And install g++ if not already installed
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;   &lt;span style=&#34;color: #f8f8f2&#34;&gt;wget&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;no&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;check&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;certificate&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;http&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&lt;/span&gt;
-   &lt;span style=&#34;color: #f8f8f2&#34;&gt;tar&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;xvf&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;openmpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1.10&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;tar&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;gz&lt;/span&gt;
-   &lt;span style=&#34;color: #f8f8f2&#34;&gt;mkdir&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;build&lt;/span&gt;
-   &lt;span style=&#34;color: #f8f8f2&#34;&gt;sudo&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;apt&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;get&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;install&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;g&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;++&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Set the following environment variables
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;BUILD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;directory&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;OMPI_1101&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;openmpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1.10&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;directory&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BUILD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bin&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$PATH&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;LD_LIBRARY_PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BUILD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;lib&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$LD_LIBRARY_PATH&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;BUILD&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;OMPI_1101&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;LD_LIBRARY_PATH&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;The instructions to build OpenMPI depend on the platform. Therefore, we highly recommend looking into the &lt;code&gt;$OMPI_1101/INSTALL&lt;/code&gt; file. Platform specific build files are available in &lt;code&gt;$OMPI_1101/contrib/platform&lt;/code&gt; directory.&lt;/li&gt;
-&lt;li&gt;In general, please specify &lt;code&gt;--prefix=$BUILD&lt;/code&gt; and &lt;code&gt;--enable-mpi-java&lt;/code&gt; as arguments to &lt;code&gt;configure&lt;/code&gt; script. If Infiniband is available (highly recommended) specify &lt;code&gt;--with-verbs=&amp;lt;path-to-verbs-installation&amp;gt;&lt;/code&gt;. Usually, the path to verbs installation is &lt;code&gt;/usr&lt;/code&gt;. In summary, the following commands will build OpenMPI for a Linux system. Also if you have a multicore machine using &lt;code&gt;make -j 8&lt;/code&gt; will use 8 cores to build in parallel.
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;$OMPI_1101&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;./&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;configure&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;prefix&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BUILD&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;enable&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;java&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;make&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;24&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;make&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;install&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;If everything goes well &lt;code&gt;mpirun --version&lt;/code&gt; will show &lt;code&gt;mpirun (Open MPI) 1.10.1&lt;/code&gt;. Execute the following command to instal &lt;code&gt;$OMPI_1101/ompi/mpi/java/java/mpi.jar&lt;/code&gt; as a Maven artifact.
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;install&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;install&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;file&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DcreateChecksum&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Dpackaging&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;jar&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Dfile&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$OMPI_1101&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;ompi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;java&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;java&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;jar&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DgroupId&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;ompi&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DartifactId&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;ompijavabinding&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Dversion&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1.10&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;Few examples are available in &lt;code&gt;$OMPI_1101/examples&lt;/code&gt;. Please use &lt;code&gt;mpijavac&lt;/code&gt; with other parameters similar to &lt;code&gt;javac&lt;/code&gt; command to compile OpenMPI Java programs. Once compiled &lt;code&gt;mpirun [options] java -cp &amp;lt;classpath&amp;gt; class-name arguments&lt;/code&gt; command with proper values set as arguments will run the MPI Java program.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Installing SPIDAL Software</title>
-      <link>https://dsc-spidal.github.io/tutorials/post/install_spidal/</link>
-      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://dsc-spidal.github.io/tutorials/post/install_spidal/</guid>
-      <description>
-
-&lt;h1 id=&#34;common:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;common&lt;/h1&gt;
-
-&lt;p&gt;SPIDAL libraries depend on the common project in DSC-SPIDAL github. We need to build it first.&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/common.git&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;common&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;keytool&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;file&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;resources&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;ricecert&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;cs&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;rice&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;edu&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;cer&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;keystore&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;tmp&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;riceKeyStore&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;You can change the name of the key store and the path to it if you prefer to.
-This command will first ask for a password, provide any password of your choosing with at least 6 characters
-then it will show the following&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;Trust&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;certificate&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;no&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;type &amp;ldquo;y&amp;rdquo; and then press enter. Now the SSL cert has been properly installed.
-Next use the following command to compile the code&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;Djavax&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;net&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;ssl&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;trustStore&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;/tmp/riceKeyStore clean install&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h1 id=&#34;da-mds:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;DA-MDS&lt;/h1&gt;
-
-&lt;p&gt;DA-MDS is the deterministic annealing implementation of Multidimensional Scaling algorithm. The project can be built from the source.&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/damds.git&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;damds&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;install&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;p&gt;After building it will create a Jar file inside the &lt;code&gt;target&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;p&gt;Usually people run MDS using a cluster manager such as slurm. We have provided a sample script in &lt;code&gt;bin&lt;/code&gt; directory that can be used to run the program on a single machine.&lt;/p&gt;
-
-&lt;h2 id=&#34;run-example-local-machine:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;Run example - local machine&lt;/h2&gt;
-
-&lt;p&gt;DA-MDS is configured using a configuration file. A sample configuration file with two input files for distance and weight matrices can be found in &lt;code&gt;examples/input&lt;/code&gt; folder.&lt;/p&gt;
-
-&lt;p&gt;Lets run this sample using the &lt;code&gt;damds.sh&lt;/code&gt; file found in &lt;code&gt;bin&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;bin&lt;/span&gt;
- &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;damds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;examples&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;properties&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;p&gt;The first argument to the script is the location of configuration file. Second argument is the number of nodes.
-In our case it is 1 as we run on local machine. The third argument is the number of processes. In this case we are using 4 processes.&lt;/p&gt;
-
-&lt;p&gt;After the program finished executing, the output will be in a file called &lt;code&gt;damds-points.txt&lt;/code&gt; inside the &lt;code&gt;bin&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;p&gt;You can upload this file to &lt;code&gt;WebPlotViz&lt;/code&gt; using the following link to visualize the data. Note: you may need to register in WebPlotViz before you can upload the files.&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//spidal-gw.dsc.soic.indiana.edu/dashboard&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&#34;run-example-slurm-cluster:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;Run example - slurm cluster&lt;/h2&gt;
-
-&lt;p&gt;You can use the &lt;code&gt;damds_slurm.sh&lt;/code&gt; found in &lt;code&gt;bin&lt;/code&gt; directory to run the program in a &lt;code&gt;slurm&lt;/code&gt; HPC cluster. In this example we assume that you have built &lt;code&gt;damds&lt;/code&gt; in a shared file system where every node can access the data files with the same file path.&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;bin&lt;/span&gt;
- &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;damds_slurm&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;examples&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;properties&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;p&gt;The above command will run the example using 4 nodes.&lt;/p&gt;
-
-&lt;h1 id=&#34;dapwc:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;DAPWC&lt;/h1&gt;
-
-&lt;p&gt;Deterministic Annealing Pairwise Clustering (dapwc) is a scalable and parallel clustering program that operate on non vector space&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/dapwc.git&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;dapwc&lt;/span&gt;
- &lt;span style=&#34;color: #a6e22e&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;install&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;p&gt;After building it will create a Jar file inside the &lt;code&gt;target&lt;/code&gt; directory.&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>Fungi Gene Sequence Clustering</title>
       <link>https://dsc-spidal.github.io/tutorials/post/fungi_gene_sequence_example/</link>
-      <pubDate>Thu, 09 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://dsc-spidal.github.io/tutorials/post/fungi_gene_sequence_example/</guid>
       <description>
@@ -334,9 +155,188 @@ two arguments and will generate a file that can be uploaded to WebPlotViz&lt;/p&
     </item>
     
     <item>
+      <title>Installing SPIDAL Software</title>
+      <link>https://dsc-spidal.github.io/tutorials/post/install_spidal/</link>
+      <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://dsc-spidal.github.io/tutorials/post/install_spidal/</guid>
+      <description>
+
+&lt;h1 id=&#34;common:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;common&lt;/h1&gt;
+
+&lt;p&gt;SPIDAL libraries depend on the common project in DSC-SPIDAL github. We need to build it first.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/common.git&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;common&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;keytool&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;file&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;resources&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;ricecert&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;cs&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;rice&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;edu&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;cer&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;keystore&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;tmp&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;riceKeyStore&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can change the name of the key store and the path to it if you prefer to.
+This command will first ask for a password, provide any password of your choosing with at least 6 characters
+then it will show the following&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;Trust&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;certificate&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;no&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;type &amp;ldquo;y&amp;rdquo; and then press enter. Now the SSL cert has been properly installed.
+Next use the following command to compile the code&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;Djavax&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;net&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;ssl&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;trustStore&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;/tmp/riceKeyStore clean install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1 id=&#34;da-mds:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;DA-MDS&lt;/h1&gt;
+
+&lt;p&gt;DA-MDS is the deterministic annealing implementation of Multidimensional Scaling algorithm. The project can be built from the source.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/damds.git&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;damds&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;After building it will create a Jar file inside the &lt;code&gt;target&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;Usually people run MDS using a cluster manager such as slurm. We have provided a sample script in &lt;code&gt;bin&lt;/code&gt; directory that can be used to run the program on a single machine.&lt;/p&gt;
+
+&lt;h2 id=&#34;run-example-local-machine:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;Run example - local machine&lt;/h2&gt;
+
+&lt;p&gt;DA-MDS is configured using a configuration file. A sample configuration file with two input files for distance and weight matrices can be found in &lt;code&gt;examples/input&lt;/code&gt; folder.&lt;/p&gt;
+
+&lt;p&gt;Lets run this sample using the &lt;code&gt;damds.sh&lt;/code&gt; file found in &lt;code&gt;bin&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;bin&lt;/span&gt;
+ &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;damds&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;examples&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;properties&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The first argument to the script is the location of configuration file. Second argument is the number of nodes.
+In our case it is 1 as we run on local machine. The third argument is the number of processes. In this case we are using 4 processes.&lt;/p&gt;
+
+&lt;p&gt;After the program finished executing, the output will be in a file called &lt;code&gt;damds-points.txt&lt;/code&gt; inside the &lt;code&gt;bin&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;You can upload this file to &lt;code&gt;WebPlotViz&lt;/code&gt; using the following link to visualize the data. Note: you may need to register in WebPlotViz before you can upload the files.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//spidal-gw.dsc.soic.indiana.edu/dashboard&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;run-example-slurm-cluster:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;Run example - slurm cluster&lt;/h2&gt;
+
+&lt;p&gt;You can use the &lt;code&gt;damds_slurm.sh&lt;/code&gt; found in &lt;code&gt;bin&lt;/code&gt; directory to run the program in a &lt;code&gt;slurm&lt;/code&gt; HPC cluster. In this example we assume that you have built &lt;code&gt;damds&lt;/code&gt; in a shared file system where every node can access the data files with the same file path.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;bin&lt;/span&gt;
+ &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;damds_slurm&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;sh&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;examples&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;properties&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;4&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The above command will run the example using 4 nodes.&lt;/p&gt;
+
+&lt;h1 id=&#34;dapwc:d5ba1b43025eafd1c38ad1a13d6b817c&#34;&gt;DAPWC&lt;/h1&gt;
+
+&lt;p&gt;Deterministic Annealing Pairwise Clustering (dapwc) is a scalable and parallel clustering program that operate on non vector space&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//github.com/DSC-SPIDAL/dapwc.git&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;dapwc&lt;/span&gt;
+ &lt;span style=&#34;color: #a6e22e&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;After building it will create a Jar file inside the &lt;code&gt;target&lt;/code&gt; directory.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Installing Prerequisites</title>
+      <link>https://dsc-spidal.github.io/tutorials/post/install_ompi.md/</link>
+      <pubDate>Thu, 18 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://dsc-spidal.github.io/tutorials/post/install_ompi.md/</guid>
+      <description>
+
+&lt;h1 id=&#34;prerequisites:529b66b2fe7b69acab780432cc5eade5&#34;&gt;Prerequisites&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Operating System&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SPDIAL is extensively tested and known to work on,&lt;/li&gt;
+&lt;li&gt;Red Hat Enterprise Linux Server release 6.7 (Santiago)&lt;/li&gt;
+&lt;li&gt;Red Hat Enterprise Linux Server release 5.10 (Tikanga)&lt;/li&gt;
+&lt;li&gt;Ubuntu 14.04 LTS&lt;/li&gt;
+&lt;li&gt;This may work in Windows systems depending on the ability to setup OpenMPI properly, however, this has not been tested and we recommend choosing a Linux based operating system instead.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Java&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download Oracle JDK 8 from &lt;a href=&#34;http://www.oracle.com/technetwork/java/javase/downloads/index.html&#34;&gt;http://www.oracle.com/technetwork/java/javase/downloads/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract the archive to a folder named jdk1.8.0&lt;/li&gt;
+&lt;li&gt;Set the following environment variables.
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;JAVA_HOME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;jdk1&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;8.0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;directory&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$JAVA_HOME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bin&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$PATH&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;JAVA_HOME&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Apache Maven&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download latest Maven release from &lt;a href=&#34;http://maven.apache.org/download.cgi&#34;&gt;http://maven.apache.org/download.cgi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract it to some folder and set the following environment variables.
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;MVN_HOME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Maven&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;folder&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$MVN_HOME&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bin&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$PATH&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;MVN_HOME&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;OpenMPI&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We recommend using &lt;code&gt;OpenMPI 1.10.1&lt;/code&gt; although it work with the previous 1.8 versions. Note, if using a version other than 1.10.1 please remember to set Maven dependency appropriately in the &lt;code&gt;pom.xml&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Download OpenMPI 1.10.1 from &lt;a href=&#34;http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&#34;&gt;http://www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract the archive to a folder named &lt;code&gt;openmpi-1.10.1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Also create a directory named &lt;code&gt;build&lt;/code&gt; in some location. We will use this to install OpenMPI&lt;/li&gt;
+&lt;li&gt;And install g++ if not already installed
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;   &lt;span style=&#34;color: #f8f8f2&#34;&gt;wget&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;no&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;check&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;certificate&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;http&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//www.open-mpi.org/software/ompi/v1.10/downloads/openmpi-1.10.1.tar.gz&lt;/span&gt;
+   &lt;span style=&#34;color: #f8f8f2&#34;&gt;tar&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;xvf&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;openmpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1.10&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;tar&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;gz&lt;/span&gt;
+   &lt;span style=&#34;color: #f8f8f2&#34;&gt;mkdir&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;build&lt;/span&gt;
+   &lt;span style=&#34;color: #f8f8f2&#34;&gt;sudo&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;apt&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;get&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;install&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;g&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;++&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Set the following environment variables
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;BUILD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;build&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;directory&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;OMPI_1101&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;openmpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1.10&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;directory&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BUILD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bin&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$PATH&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;LD_LIBRARY_PATH&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BUILD&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;lib&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$LD_LIBRARY_PATH&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;BUILD&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;OMPI_1101&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PATH&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;LD_LIBRARY_PATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;The instructions to build OpenMPI depend on the platform. Therefore, we highly recommend looking into the &lt;code&gt;$OMPI_1101/INSTALL&lt;/code&gt; file. Platform specific build files are available in &lt;code&gt;$OMPI_1101/contrib/platform&lt;/code&gt; directory.&lt;/li&gt;
+&lt;li&gt;In general, please specify &lt;code&gt;--prefix=$BUILD&lt;/code&gt; and &lt;code&gt;--enable-mpi-java&lt;/code&gt; as arguments to &lt;code&gt;configure&lt;/code&gt; script. If Infiniband is available (highly recommended) specify &lt;code&gt;--with-verbs=&amp;lt;path-to-verbs-installation&amp;gt;&lt;/code&gt;. Usually, the path to verbs installation is &lt;code&gt;/usr&lt;/code&gt;. In summary, the following commands will build OpenMPI for a Linux system. Also if you have a multicore machine using &lt;code&gt;make -j 8&lt;/code&gt; will use 8 cores to build in parallel.
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;$OMPI_1101&lt;/span&gt;
+    &lt;span style=&#34;color: #f92672&#34;&gt;./&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;configure&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;prefix&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$BUILD&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;enable&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;java&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;make&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;24&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;make&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;If everything goes well &lt;code&gt;mpirun --version&lt;/code&gt; will show &lt;code&gt;mpirun (Open MPI) 1.10.1&lt;/code&gt;. Execute the following command to instal &lt;code&gt;$OMPI_1101/ompi/mpi/java/java/mpi.jar&lt;/code&gt; as a Maven artifact.
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;    &lt;span style=&#34;color: #f8f8f2&#34;&gt;mvn&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;install&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;install&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;file&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DcreateChecksum&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Dpackaging&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;jar&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Dfile&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$OMPI_1101&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;ompi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;java&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;java&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;mpi&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;jar&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DgroupId&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;ompi&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;DartifactId&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;ompijavabinding&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Dversion&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1.10&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Few examples are available in &lt;code&gt;$OMPI_1101/examples&lt;/code&gt;. Please use &lt;code&gt;mpijavac&lt;/code&gt; with other parameters similar to &lt;code&gt;javac&lt;/code&gt; command to compile OpenMPI Java programs. Once compiled &lt;code&gt;mpirun [options] java -cp &amp;lt;classpath&amp;gt; class-name arguments&lt;/code&gt; command with proper values set as arguments will run the MPI Java program.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Pathology Image Data</title>
       <link>https://dsc-spidal.github.io/tutorials/post/pathology_image_data_example/</link>
-      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 16 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://dsc-spidal.github.io/tutorials/post/pathology_image_data_example/</guid>
       <description>

@@ -6,13 +6,13 @@
     <description>Recent content in Example on SPIDAL Tutorials</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jan 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://dsc-spidal.github.io/tutorials/categories/example/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Fungi Gene Sequence Clustering</title>
       <link>https://dsc-spidal.github.io/tutorials/post/fungi_gene_sequence_example/</link>
-      <pubDate>Thu, 09 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://dsc-spidal.github.io/tutorials/post/fungi_gene_sequence_example/</guid>
       <description>
@@ -157,7 +157,7 @@ two arguments and will generate a file that can be uploaded to WebPlotViz&lt;/p&
     <item>
       <title>Pathology Image Data</title>
       <link>https://dsc-spidal.github.io/tutorials/post/pathology_image_data_example/</link>
-      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 16 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://dsc-spidal.github.io/tutorials/post/pathology_image_data_example/</guid>
       <description>
