@@ -2,8 +2,8 @@
 title: "Installing SPIDAL Software"
 description: "Install MDS and DAVS"
 tags: []
-lastmod: 2018-01-19
-date: "2018-01-19"
+lastmod: 2018-01-18
+date: "2018-01-18"
 categories:
   - "Development"
   - "VIM"
