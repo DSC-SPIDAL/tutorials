@@ -83,7 +83,7 @@ In order to run the program you must configure the `config.properties` file to p
 done you can simple run the program by executing `./run_mds.sh` from the shell.
 
 The run will create a points file name `damds-points.txt` which will contain the 3D data points. In order to upload this data file to WebPlotViz you need to format the data to the correct format. This can be
-done using the `format_data.sh` script. The script takes a file name as an argument and formats that file and outputs the formatted file with .foramatted extention. ex usage `./format_data.sh damds-points.txt`.
+done using the `format_data.sh` script. The script takes a file name as an argument and formats that file and outputs the formatted file with .foramatted extention. ex usage `./format_data.sh damds/damds-points.txt`.
 
 {{< highlight javascript >}}
 //Commands and steps - excute 1 command at a time

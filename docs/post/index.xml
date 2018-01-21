@@ -270,7 +270,7 @@ with DAPWC to visualize the data in WebPlotViz.&lt;/p&gt;
 done you can simple run the program by executing &lt;code&gt;./run_mds.sh&lt;/code&gt; from the shell.&lt;/p&gt;
 
 &lt;p&gt;The run will create a points file name &lt;code&gt;damds-points.txt&lt;/code&gt; which will contain the 3D data points. In order to upload this data file to WebPlotViz you need to format the data to the correct format. This can be
-done using the &lt;code&gt;format_data.sh&lt;/code&gt; script. The script takes a file name as an argument and formats that file and outputs the formatted file with .foramatted extention. ex usage &lt;code&gt;./format_data.sh damds-points.txt&lt;/code&gt;.&lt;/p&gt;
+done using the &lt;code&gt;format_data.sh&lt;/code&gt; script. The script takes a file name as an argument and formats that file and outputs the formatted file with .foramatted extention. ex usage &lt;code&gt;./format_data.sh damds/damds-points.txt&lt;/code&gt;.&lt;/p&gt;
 
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;//Commands and steps - excute 1 command at a time&lt;/span&gt;
  &lt;span style=&#34;color: #a6e22e&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;scripts&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;damds&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;
